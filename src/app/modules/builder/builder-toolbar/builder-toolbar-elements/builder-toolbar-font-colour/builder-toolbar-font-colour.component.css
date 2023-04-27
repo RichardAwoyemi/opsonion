@@ -1,0 +1,129 @@
+div.dropdown {
+  align-items: center;
+}
+
+button.inactive-font-colour-button {
+  border-radius: 0.5rem;
+  background-color: inherit !important;
+  transition: background-color 0.3s ease-in, background-color 0.2s ease-out;
+}
+
+button.inactive-font-colour-button:hover,
+.active-font-colour-button {
+  border-radius: 0.5rem !important;
+  background-color: #edf0f2 !important;
+}
+
+div.dropdown-menu {
+  padding: 0 !important;
+  display: block;
+  position: absolute;
+  will-change: transform;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, 42px, 0);
+  text-decoration: none;
+  font-size: 0.8rem !important;
+  max-height: 50vh;
+  min-width: 6rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+div.dropdown-menu::-webkit-scrollbar-thumb {
+  background: #7e7e7e;
+}
+
+.dropdown-item {
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.active-menu-option {
+  background-color: rgba(113, 147, 240, 0.15);
+}
+
+input {
+  background: inherit;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  border: 0;
+}
+
+.font-colour-button-display {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.toolbar-font-colour-button-class {
+  box-sizing: border-box;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  color: #0e1318;
+  padding: 0.58em 0.5em;
+  border-radius: 0.5em;
+  user-select: none;
+  display: inline-flex;
+  max-width: 100%;
+  vertical-align: top;
+  align-items: center;
+  outline: none;
+  justify-content: center;
+  min-width: 0;
+  transition: background-color 0.3s ease, color 0.2s ease-out;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-color: transparent;
+}
+
+.toolbar-font-colour-button-contents-outer {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #0e1318;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.toolbar-font-colour-button-contents-inner {
+  position: relative;
+  line-height: 1.6;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: text-bottom;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+}
+
+.toolbar-font-colour-letter {
+  font-size: 1.4rem;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+<div
+  (click)="clearActiveComponent()"
+  (dblclick)="clearActiveComponent()"
+  *ngIf="!previewMode"
+  [attr.data-cy]="'placeholder-component'"
+>
+  <div class="component-border-placeholder no-select">
+    <div
+      (dragexit)="onDragExit($event)"
+      (dragleave)="onDragLeave($event)"
+      (dragover)="onDragOver($event); $event.preventDefault()"
+      (drop)="onDropEvent($event); $event.preventDefault()"
+      (mouseup)="onDropEvent($event)"
+      [attr.data-cy]="componentName"
+      [attr.id]="componentId"
+      class="drop-box"
+    ></div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div [ngStyle]="{ height: innerHeight + 'px' }">
+  <div class="sidebar-scroll" style="height: 100%; width: 100%;">
+    <app-dashboard-body-websites
+      *ngIf="activeSidebar == ACTIVE_SIDEBAR_WEBSITES"
+    ></app-dashboard-body-websites>
+    <app-dashboard-body-templates
+      *ngIf="activeSidebar == ACTIVE_SIDEBAR_TEMPLATES"
+    ></app-dashboard-body-templates>
+    <app-dashboard-body-settings
+      *ngIf="activeSidebar == ACTIVE_SIDEBAR_SETTINGS"
+    ></app-dashboard-body-settings>
+    <app-dashboard-body-rewards
+      *ngIf="activeSidebar == ACTIVE_SIDEBAR_REWARDS"
+    ></app-dashboard-body-rewards>
+  </div>
+</div>

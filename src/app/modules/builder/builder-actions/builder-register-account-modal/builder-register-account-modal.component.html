@@ -1,0 +1,104 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">Register</h5>
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'modal-close'"
+      class="close"
+      type="button"
+    >
+      <span aria-hidden="true" class="builder-modal-page-new-close">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          (blur)="onChangeUpdateFirstName()"
+          (change)="onChangeUpdateFirstName()"
+          [(ngModel)]="firstName"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="firstName"
+          placeholder="First Name"
+          required
+          type="text"
+        />
+      </label>
+      <div *ngIf="showFirstNameInputError" class="text-danger">
+        <small>First Name is required</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          (blur)="onChangeUpdateLastName()"
+          (change)="onChangeUpdateLastName()"
+          [(ngModel)]="lastName"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="lastName"
+          placeholder="Last Name"
+          required
+          type="text"
+        />
+      </label>
+      <div *ngIf="showLastNameInputError" class="text-danger">
+        <small>Last Name is required</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          (blur)="onChangeUpdateEmail()"
+          (change)="onChangeUpdateEmail()"
+          [(ngModel)]="email"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="email"
+          placeholder="Email"
+          required
+          type="email"
+        />
+      </label>
+      <div *ngIf="showEmailInputError" class="text-danger">
+        <small>Email Name is required</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          (blur)="onChangeUpdatePassword()"
+          (change)="onChangeUpdatePassword()"
+          [(ngModel)]="password"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="password"
+          placeholder="Password"
+          required
+          type="password"
+        />
+      </label>
+      <div *ngIf="showPasswordInputError" class="text-danger">
+        <small>Password is required</small>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onConfirmButtonClick()"
+      [disabled]="disableSaveButton"
+      class="builder-modal-page-new-save btn btn-secondary"
+      type="button"
+    >
+      Create Account</button
+    >&nbsp;
+    <button
+      (click)="onCloseButtonClick()"
+      class="builder-modal-page-new-cancel btn btn-secondary"
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

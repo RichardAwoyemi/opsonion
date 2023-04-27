@@ -1,0 +1,39 @@
+.showcase-backdrop {
+  width: 100%;
+  background-color: #eaedef;
+  padding: 1em 2em 0;
+}
+
+.showcase-backdrop:hover {
+  cursor: hand;
+}
+
+.showcase-holder {
+  border: 1px;
+  overflow: hidden;
+  margin-bottom: 0;
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 7px 0 #ccc;
+  -moz-box-shadow: 0 2px 7px 0 #ccc;
+  box-shadow: 0 2px 7px 0 #ccc;
+}
+
+.custom .popover-title {
+  background-color: black;
+  color: white;
+}
+
+.desktop {
+  width: 100%;
+  transition: width 1s;
+}
+
+.tablet {
+  width: 70%;
+  transition: width 1s;
+}
+
+.mobile {
+  width: 35%;
+  transition: width 1s;
+}

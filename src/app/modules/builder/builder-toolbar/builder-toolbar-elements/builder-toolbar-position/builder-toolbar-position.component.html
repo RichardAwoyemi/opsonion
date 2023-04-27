@@ -1,0 +1,78 @@
+<button
+  (click)="togglePositionMenu()"
+  [attr.data-cy]="'toolbar-' + (settings.displayText | lowercase) + '-button'"
+  [class]="BUTTON_CLASS"
+  [innerText]="'Position'"
+></button>
+
+<div *ngIf="showMenu" class="toolbar-position-menu-placement-container">
+  <div class="toolbar-position-menu-container-borders">
+    <div style="padding: 16px; max-height: 60vh; overflow-y: auto;">
+
+      <div class="toolbar-position-button-row">
+        <button class="toolbar-position-menu-button" [ngClass]="'inactive-button'" (click)='setLayer(1)'>
+          <div class="toolbar-position-menu-button-content">
+            <span class="toolbar-button-icon-outer-container">
+              <span class="toolbar-button-icon-inner-container">
+                <img src="assets/img/position-forwards.svg" />
+              </span>
+            </span>
+            <span class="toolbar-position-menu-button-text">Forwards</span>
+          </div>
+        </button>
+        <button class="toolbar-position-menu-button" [ngClass]="'inactive-button'" (click)="setLayer(-1)">
+          <div class="toolbar-position-menu-button-content">
+            <span class="toolbar-button-icon-outer-container">
+              <span class="toolbar-button-icon-inner-container">
+                <img src="assets/img/position-backwards.svg" />
+              </span>
+            </span>
+            <span class="toolbar-position-menu-button-text">Backwards</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="toolbar-position-menu-subheading-outer-container">
+        <div class="toolbar-position-menu-subheading-inner-container">
+          <span class="toolbar-position-menu-subheading" [innerText]="'Align to section'"></span>
+        </div>
+      </div>
+
+      <div *ngFor="let status of buttonSettings" class="toolbar-position-button-row">
+        <div
+          *ngTemplateOutlet="
+            toolbarPositionMenuButton;
+            context: {
+              source: status.y.source,
+              text: status.y.text,
+              class: status.y.active ? 'active-button' : 'inactive-button'
+            }
+          "
+        ></div>
+        <div
+          *ngTemplateOutlet="
+            toolbarPositionMenuButton;
+            context: {
+              source: status.x.source,
+              text: status.x.text,
+              class: status.x.active ? 'active-button' : 'inactive-button'
+            }
+          "
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template let-source="source" let-text="text" let-class="class" #toolbarPositionMenuButton>
+  <button class="toolbar-position-menu-button" [ngClass]="class" (click)="setPosition(text)">
+    <div class="toolbar-position-menu-button-content">
+      <span class="toolbar-button-icon-outer-container">
+        <span class="toolbar-button-icon-inner-container">
+          <img src="{{ source }}" />
+        </span>
+      </span>
+      <span class="toolbar-position-menu-button-text">{{ text }}</span>
+    </div>
+  </button>
+</ng-template>&nbsp;

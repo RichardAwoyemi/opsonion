@@ -1,0 +1,26 @@
+<div
+  infinite-scroll
+  (scrolled)="emitScrollDownEvent()"
+  [scrollWindow]="false"
+  class="masonry"
+  *ngIf="photosLoaded && photos; else skeletonPhotosContainer"
+  [ngStyle]="{ 'overflow-y': 'auto', height: photosListingInnerHeight + 'px' }"
+>
+  <ul class="sidebar-photos-list">
+    <li *ngFor="let photo of photos; trackBy: trackByIdx; let i = index">
+      <img
+        src="{{ photo.urls.regular }}"
+        (click)="addElement(photo)"
+        (drag)="onDrag($event)"
+        (dragstart)="onDragStart($event, photo)"
+        (dragend)="onDragEnd($event)"
+        [attr.data-cy]="'builder-sidebar-photo-' + i"
+        alt="{{ photo.alt_description }}"
+      />
+    </li>
+  </ul>
+</div>
+
+<ng-template #skeletonPhotosContainer>
+  <app-builder-sidebar-skeleton-photos-list></app-builder-sidebar-skeleton-photos-list>
+</ng-template>

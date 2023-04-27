@@ -1,0 +1,64 @@
+<div class="row">
+  <form
+    #f="ngForm"
+    (ngSubmit)="f.form.valid && login()"
+    class="col-md-4 col-xl-4 mx-auto input-border"
+    name="loginForm"
+    novalidate
+  >
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          #email="ngModel"
+          [(ngModel)]="user.email"
+          [attr.data-cy]="'login-form-email-input'"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="email"
+          placeholder="Email"
+          required
+          type="email"
+        />
+      </label>
+      <small *ngIf="f.submitted && !email.valid" class="text-danger">Email is required</small>
+    </div>
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          #password="ngModel"
+          [(ngModel)]="user.password"
+          [attr.data-cy]="'login-form-password-input'"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="password"
+          placeholder="Password"
+          required
+          type="password"
+        />
+      </label>
+      <small *ngIf="f.submitted && !password.valid" class="text-danger">Password is required</small>
+    </div>
+    <div class="row align-items-center pt-3 pb-5">
+      <div class="col text-center">
+        <p class="mb-0 fw-300">
+          <a class="text-muted small-2" routerLink="/forgot-password">Forgot your password?</a>
+        </p>
+      </div>
+    </div>
+    <button
+      [attr.data-cy]="'login-form-login-button'"
+      class="btn btn-lg btn-block btn-primary"
+      type="submit"
+    >
+      Login
+    </button>
+    <p
+      [attr.data-cy]="'login-form-register-button'"
+      class="small-2 text-left mt-5 mb-0 text-center"
+    >
+      Don't have an account? <a routerLink="/register">Create one</a>.
+    </p>
+    <hr class="w-10" />
+    <app-social-login-button-group></app-social-login-button-group>
+  </form>
+</div>

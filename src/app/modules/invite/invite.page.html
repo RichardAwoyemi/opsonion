@@ -1,0 +1,10 @@
+<section class="section text-center">
+  <div class="container">
+    <app-section-header-group
+      *ngIf="referredByUser?.firstName"
+      title="{{ referredByUser?.firstName }} has invited you to join Opsonion!"
+    >
+    </app-section-header-group>
+    <app-form-register [referredByUser]="referredByUser"></app-form-register>
+  </div>
+</section>

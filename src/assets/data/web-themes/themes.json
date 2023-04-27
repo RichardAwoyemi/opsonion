@@ -1,0 +1,113 @@
+[
+  {
+    "name": "Default"
+  },
+  {
+    "name": "Carver",
+    "colour": {
+      "primary-background": "#ffffff",
+      "primary-text": "#626e60",
+      "secondary-background": "#3ca4af",
+      "secondary-text": "#af473c",
+      "button-background": "#3c3c3c",
+      "button-border": "#ffffff",
+      "button-text": "#ffffff"
+    }
+  },
+  {
+    "name": "Champagne",
+    "colour": {
+      "primary-background": "#f4f4f4",
+      "primary-text": "#373737",
+      "secondary-background": "#f4f4f4",
+      "secondary-text": "#373737",
+      "button-background": "#c0b283",
+      "button-border": "#ffffff",
+      "button-text": "#ffffff"
+    }
+  },
+  {
+    "name": "Fenderman",
+    "colour": {
+      "primary-background": "#2ea29f",
+      "primary-text": "#ffd54f",
+      "secondary-background": "#2ea29f",
+      "secondary-text": "#ffffff",
+      "button-background": "#2e6ba2",
+      "button-border": "#ffffff",
+      "button-text": "#ffffff"
+    }
+  },
+  {
+    "name": "Mercury",
+    "colour": {
+      "primary-background": "#eeeeee",
+      "primary-text": "#4b4b4b",
+      "secondary-background": "#eeeeee",
+      "secondary-text": "#4b4b4b",
+      "button-background": "#333333",
+      "button-border": "#ffffff",
+      "button-text": "#ffffff"
+    }
+  },
+  {
+    "name": "Payton",
+    "colour": {
+      "primary-background": "#fa7c92",
+      "primary-text": "#ffffff",
+      "secondary-background": "#66ab8c",
+      "secondary-text": "#ffffff",
+      "button-background": "#ffffff",
+      "button-border": "#000000",
+      "button-text": "#000000"
+    }
+  },
+  {
+    "name": "Québecile",
+    "colour": {
+      "primary-background": "#dcc7aa",
+      "primary-text": "#6b7a8f",
+      "secondary-background": "#f7882f",
+      "secondary-text": "#ffffff",
+      "button-background": "#6b7a8f",
+      "button-border": "#ffffff",
+      "button-text": "#ffffff"
+    }
+  },
+  {
+    "name": "Reffkin",
+    "colour": {
+      "primary-background": "#66ab8c",
+      "primary-text": "#ffffff",
+      "secondary-background": "#6ec4db",
+      "secondary-text": "#000000",
+      "button-background": "#ffffff",
+      "button-border": "#000000",
+      "button-text": "#000000"
+    }
+  },
+  {
+    "name": "Stanley",
+    "colour": {
+      "primary-background": "#108ec8",
+      "primary-text": "#ffffff",
+      "secondary-background": "#108ec8",
+      "secondary-text": "#ffffff",
+      "button-background": "#ffffff",
+      "button-border": "#cccccc",
+      "button-text": "#108ec8"
+    }
+  },
+  {
+    "name": "Walker",
+    "colour": {
+      "primary-background": "#a9b7c0",
+      "primary-text": "#ffffff",
+      "secondary-background": "#cccbc6",
+      "secondary-text": "#ffffff",
+      "button-background": "#efd9c1",
+      "button-border": "#ffffff",
+      "button-text": "#ffffff"
+    }
+  }
+]

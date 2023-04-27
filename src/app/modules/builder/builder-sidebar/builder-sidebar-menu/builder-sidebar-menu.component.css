@@ -1,0 +1,73 @@
+.nav-item .active {
+  background-color: #29303a !important;
+}
+
+.menu-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  height: 18px;
+  line-height: 18px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a.menu-text {
+  color: #757575 !important;
+  pointer-events: none;
+  font-size: 10px;
+}
+
+.active a.menu-text {
+  color: #fff !important;
+  pointer-events: none;
+}
+
+.nav-item .nav-icon {
+  fill: #757575 !important;
+}
+
+.nav-item:hover .menu-text {
+  color: #fff !important;
+}
+
+.nav-item:hover .nav-icon {
+  fill: #fff !important;
+}
+
+.nav-item .active .nav-icon {
+  fill: #fff !important;
+}
+
+.nav-title {
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
+.nav-item .nav-title {
+  padding-top: 0.5em;
+}
+
+.nav-item .active .nav-title {
+  color: #fff;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.nav-item > a {
+  padding-top: 0.75em !important;
+  padding-bottom: 0.75em !important;
+  padding-right: 0.25em !important;
+  text-align: center;
+  z-index: 5;
+  position: relative;
+}
+
+.nav-item > a:hover {
+  color: #fff;
+}
+
+.nav-pills .nav-link {
+  border-radius: 0;
+}

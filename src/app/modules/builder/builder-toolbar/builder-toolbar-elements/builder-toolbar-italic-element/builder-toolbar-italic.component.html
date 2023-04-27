@@ -1,0 +1,20 @@
+<button
+  (click)="onButtonClick('italic')"
+  [attr.data-cy]="'toolbar-text-command-italic-button'"
+  [ngClass]="getToolbarButtonCommandState('italic')"
+  class="toolbar-text-command-italic-button"
+>
+  <svg
+    aria-hidden="true"
+    class="toolbar-text-command-italic-icon"
+    focusable="false"
+    height="23"
+    width="20"
+  >
+    <path
+      d="M14.73 6.5l-3.67 11H14l-.3 1.5H6l.3-1.5h2.81l3.68-11H10l.3-1.5H18l-.3 1.5h-2.97z"
+      fill="currentColor"
+      fill-rule="evenodd"
+    ></path>
+  </svg>
+</button>&nbsp;

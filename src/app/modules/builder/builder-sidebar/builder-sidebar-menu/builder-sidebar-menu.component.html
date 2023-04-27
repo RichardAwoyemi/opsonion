@@ -1,0 +1,17 @@
+<div
+  [ngStyle]="{ height: innerHeight - INNER_HEIGHT_OFFSET + 'px' }"
+  class="sidebar-tab-scroll {{ activeSetting | lowercase }}-tab-scroll"
+>
+  <div class="sidebar-menu-tab-icons">
+    <ul class="nav nav-pills flex-column" role="tablist">
+      <app-builder-sidebar-menu-item
+        *ngFor="let menuItem of SIDEBAR_MENU_ITEMS"
+        [activeSetting]="menuItem.activeSettingName"
+        [menuText]="menuItem.menuItemName"
+        [svgIconPath]="menuItem.svgIconPath"
+        [svgIconHeight]="menuItem.svgIconHeight"
+        [svgIconWidth]="menuItem.svgIconWidth"
+      ></app-builder-sidebar-menu-item>
+    </ul>
+  </div>
+</div>

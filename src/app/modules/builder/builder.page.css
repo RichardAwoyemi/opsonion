@@ -1,0 +1,41 @@
+.builder-page-container {
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+.builder-page-sidebar-container {
+  flex-basis: 25%;
+  transition: max-width 0.15s ease-in-out;
+  will-change: max-width;
+}
+
+.builder-page-showcase-container {
+  flex-basis: 75%;
+  max-width: 100%;
+}
+
+.builder-page-sidebar-container,
+.builder-page-showcase-container {
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.builder-page-error-container {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.builder-page-resolution-error-message-container {
+  padding-top: 2em;
+}
+
+.builder-page-error-logo {
+  width: 30%;
+}
+
+.builder-page-error-button {
+  padding-top: 1.5em;
+}

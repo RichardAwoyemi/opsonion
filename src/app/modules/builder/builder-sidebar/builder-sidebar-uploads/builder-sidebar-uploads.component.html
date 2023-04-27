@@ -1,0 +1,147 @@
+<div *ngIf="activeSetting == settingsName">
+  <div class="{{ tabName }}" id="tab-uploads">
+    <label class="btn btn-lg btn-secondary btn-file">
+      <input
+        (change)="fileUpload($event)"
+        [attr.data-cy]="'builder-sidebar-upload-file-button'"
+        accept="image/x-png,image/gif,image/jpeg,image/svg+xml"
+        type="file"
+        multiple
+      />
+      <span
+        [attr.data-cy]="'builder-select-image-upload-image'"
+        class="builder-modal builder-select-image-upload-image"
+        [innerText]="buttonText"
+      ></span>
+    </label>
+
+    <div
+      class="default-upload-text"
+      *ngIf="!images || images.length === 0"
+      [innerText]="defaultUploadText"
+    ></div>
+
+    <br/>
+
+    <ul class="sidebar-image-gallery">
+      <li *ngFor="let image of images; let i = index; trackBy: trackByFn" class="image-container">
+        <img
+          class="{{ image['uploadState'] }}"
+          src="{{ image['preview'] }}"
+          alt="Dummy Image"
+          [attr.data-cy]="'builder-sidebar-uploaded-file-' + i"
+          (click)="addElement(image)"
+          (dragstart)="onDragStart($event, image)"
+          (dragend)="onDragEnd()"
+          (dragover)="$event.preventDefault()"
+          (drop)="$event.preventDefault(); fileUpload($event)"
+        />
+        <div [@checkboxFade]="checkboxClass" class="checkbox-container {{ checkboxClass }}">
+          <input
+            id="{{ image['key'] }}"
+            type="checkbox"
+            [(ngModel)]="selectModeSettings[i]['checked']"
+            (click)="onCheckboxClick($event, image['key'])"
+          />
+          <label for="{{ image['key'] }}">
+            <span></span>
+          </label>
+        </div>
+        <label
+          class="{{ selectModeImageClass }}"
+          for="{{ selectModeSettings[i]['key'] }}"
+          (click)="onCheckboxClick($event, image['key'])"
+          (dragover)="$event.preventDefault()"
+          (drop)="$event.preventDefault(); fileUpload($event)"
+        ></label>
+        <div
+          *ngIf="!image['src']"
+          class="overlay"
+          id="{{ selectModeSettings[i]['key'] }}"
+          (dragover)="$event.preventDefault()"
+          (drop)="$event.preventDefault(); fileUpload($event)"
+        ></div>
+        <div [@hideAnimation]="image['uploadState']" id="loading">
+          <div id="bar"></div>
+        </div>
+      </li>
+      <li></li>
+    </ul>
+
+    <div
+      class="drag-event-container"
+      (dragover)="$event.preventDefault()"
+      (drop)="$event.preventDefault(); fileUpload($event)"
+    ></div>
+
+    <div class="selected-image-menu" [@selectedImageMenu]="selectModeMenuState">
+      <div class="content-container">
+        <p style="margin: 0;">({{ selectedImages.length }}) selected</p>
+      </div>
+      <div class="content-container">
+        <div class="trash-icon icon-button" (click)="onDeleteIconClick()">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3.60861 6.86874H5.60861H21.6086"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M8.60861 6.86874V4.86874C8.60861 4.33831 8.81933 3.8296 9.1944 3.45453C9.56947 3.07946 10.0782 2.86874 10.6086 2.86874H14.6086C15.139 2.86874 15.6478 3.07946 16.0228 3.45453C16.3979 3.8296 16.6086 4.33831 16.6086 4.86874V6.86874M19.6086 6.86874V20.8687C19.6086 21.3992 19.3979 21.9079 19.0228 22.283C18.6478 22.658 18.139 22.8687 17.6086 22.8687H7.60861C7.07818 22.8687 6.56947 22.658 6.1944 22.283C5.81933 21.9079 5.60861 21.3992 5.60861 20.8687V6.86874H19.6086Z"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10.6086 11.8687V17.8687"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M14.6086 11.8687V17.8687"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <div class="cancel-icon icon-button" (click)="clearSelectMode()">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 6L6 18"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M6 6L18 18"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<header [ngClass]="headerHeight$ | async">
+  <div class="container text-center">
+    <div [ngClass]="rowAlignment$ | async">
+      <div class="col-md-12 mx-auto">
+        <h1
+          *ngIf="(isMobile | async)?.matches"
+          [attr.data-cy]="'heading'"
+          [innerHTML]="mobileTitle"
+          class="fw-600 text-center"
+        ></h1>
+        <h1
+          *ngIf="!(isMobile | async)?.matches"
+          [attr.data-cy]="'heading'"
+          [innerHTML]="desktopTitle"
+          class="fw-600 text-center"
+          style="font-size: 56px;"
+        ></h1>
+        <div *ngIf="(isMobile | async)?.matches" style="padding-top: 3em; padding-bottom: 3em;">
+          <app-browser-mockup img="../../../../assets/img/feature-1.png"></app-browser-mockup>
+        </div>
+        <p *ngIf="(isMobile | async)?.matches" [attr.data-cy]="'subheading'" class="lead mt-5 mb-8">
+          {{ subtitle }}
+        </p>
+        <p
+          *ngIf="!(isMobile | async)?.matches"
+          [attr.data-cy]="'subheading'"
+          [innerHTML]="subtitle"
+          class="lead mt-5 mb-8"
+          style="font-size: 23px; padding-top: 0.5em;"
+        ></p>
+        <p *ngIf="!(isMobile | async)?.matches" class="gap-xy">
+          <app-home-build-button position="center"></app-home-build-button>
+        </p>
+        <p *ngIf="(isMobile | async)?.matches" class="gap-xy">
+          <button
+            (click)="router.navigate(['/register'])"
+            [attr.data-cy]="'create-account-button'"
+            class="btn btn-xl btn-primary"
+            type="button"
+          >
+            Create an Account
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+<section *ngIf="!(isMobile | async)?.matches" class="section" style="padding-top: 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <app-browser-mockup img="../../../../assets/img/feature-1.png"></app-browser-mockup>
+      </div>
+    </div>
+  </div>
+</section>

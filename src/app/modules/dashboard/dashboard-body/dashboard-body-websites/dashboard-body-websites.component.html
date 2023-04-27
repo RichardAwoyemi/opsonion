@@ -1,0 +1,111 @@
+<div id="websites"></div>
+<div *ngIf="!(isMobile | async)?.matches" [attr.data-cy]="'dashboard-website-listing'">
+  <div
+    *ngIf="websites?.length === 0"
+    [ngStyle]="{ height: innerHeight + 'px' }"
+    class="d-flex flex-row justify-content-center align-items-center"
+  >
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img alt="blank" src="../../../../../assets/img/blank.svg" style="height: 10em;" />
+      </div>
+      <div class="col-md-12 text-center">
+        <div style="padding-top: 2em; padding-bottom: 1em;">
+          <p>Your first website is going to be amazing.</p>
+        </div>
+        <button (click)="openCreateWebsiteModal()" class="btn btn-lg btn-primary" type="button">
+          Create Website
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="websites?.length > 0">
+    <div [ngStyle]="{ height: innerHeight + 'px' }">
+      <div style="padding: 2em;">
+        <h3>Websites</h3>
+        <div class="row gap-y" style="padding-top: 1.75em;">
+          <div *ngFor="let website of websites" class="col-md-6 col-lg-4">
+            <div
+              #dropdown="ngbDropdown"
+              [attr.data-cy]="'dashboard-website-item'"
+              ngbDropdown
+              placement="bottom"
+            >
+              <div
+                (click)="$event.stopPropagation(); dropdown.open()"
+                class="card border hover-shadow-6 d-block"
+              >
+                <div class="p-6 text">
+                  <span ngbDropdownToggle>
+                    <span [attr.data-cy]="'dashboard-website-name'" style="font-size: 13px;">{{
+                      website.name
+                    }}</span>
+                  </span>
+                  <div ngbDropdownMenu>
+                    <button
+                      (click)="openBuilderPage(website.id)"
+                      [attr.data-cy]="'dashboard-website-edit-website-button'"
+                      ngbDropdownItem
+                    >
+                      Edit
+                    </button>
+                    <button
+                      (click)="openPreviewPage(website.id)"
+                      [attr.data-cy]="'dashboard-website-preview-website-button'"
+                      ngbDropdownItem
+                    >
+                      Preview
+                    </button>
+                    <button
+                      (click)="openRenameWebsiteModal(website.id, website.name)"
+                      [attr.data-cy]="'dashboard-website-rename-website-button'"
+                      ngbDropdownItem
+                    >
+                      Rename
+                    </button>
+                    <button
+                      (click)="openDeleteWebsiteModal(website.id, website.name)"
+                      [attr.data-cy]="'dashboard-website-delete-website-button'"
+                      ngbDropdownItem
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="(isMobile | async)?.matches">
+  <div
+    *ngIf="websites?.length === 0"
+    [ngStyle]="{ height: innerHeight - 160 + 'px' }"
+    class="d-flex flex-row justify-content-center align-items-center"
+  >
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <img alt="blank" src="../../../../../assets/img/blank.svg" style="height: 10em;" />
+      </div>
+      <div class="col-md-12 text-center">
+        <div style="padding-top: 2em; padding-bottom: 1em;">
+          <p>You currently do not have any websites.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="websites?.length > 0">
+    <div class="row gap-y" style="padding-top: 0.5em;">
+      <div *ngFor="let website of websites | sort: 'name'" class="col-md-6 col-lg-4">
+        <div (click)="openPreviewPage(website['id'])" class="card border hover-shadow-6 d-block">
+          <div class="p-6 text">
+            <span style="font-size: 13px;">{{ website['name'] }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

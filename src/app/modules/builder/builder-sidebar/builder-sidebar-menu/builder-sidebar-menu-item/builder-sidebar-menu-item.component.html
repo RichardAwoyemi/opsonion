@@ -1,0 +1,16 @@
+<li [attr.data-cy]="'builder-sidebar-menu-' + (menuText | lowercase) + '-icon'" class="nav-item">
+  <a
+    (click)="setActiveEditSetting(activeSetting)"
+    [ngClass]="setMenuClass(activeSetting)"
+    data-toggle="tab"
+  >
+    <svg
+      [ngStyle]="{ height: svgIconHeight + 'px', width: svgIconWidth + 'px' }"
+      [attr.viewBox]="'0 0 ' + svgIconHeight + ' ' + svgIconWidth"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path class="nav-icon" [attr.d]="svgIconPath"></path>
+    </svg>
+    <a class="menu-text"><br />{{ menuText }}</a>
+  </a>
+</li>

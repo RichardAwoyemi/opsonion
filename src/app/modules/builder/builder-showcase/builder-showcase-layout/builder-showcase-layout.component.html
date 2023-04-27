@@ -1,0 +1,52 @@
+<div
+  *ngIf="websiteLoaded"
+  [attr.id]="'builder-showcase-layout'"
+  [attr.data-cy]="'builder-showcase-layout'"
+  [sortablejsOptions]="options"
+  [sortablejs]="(this.website?.pages)[this.activePageIndex]?.components"
+>
+  <div
+    *ngFor="
+      let component of (this.website?.pages)[this.activePageIndex]?.components;
+      let i = index;
+      trackBy: trackByFn
+    "
+    (dragstart)="builderComponentDragged(i)"
+    (dragend)="clearActiveDrag()"
+    [ngSwitch]="component.componentType"
+  >
+    <app-builder-section
+      *ngSwitchCase="'section'"
+      (click)="builderComponentSelected(i)"
+      (keydown.delete)="onDeleteComponent()"
+      (keydown.backspace)="onDeleteComponent()"
+      [attr.data-cy]="'builder-showcase-component-' + i"
+      [attr.tabindex]="i"
+      [attr.id]="component.componentId"
+      [attr.name]="component.componentName"
+      [component]="component"
+      [showcaseDocument]="showcaseDocument"
+      [activeDragData]="activeDragData"
+      [activeComponentMetadata]="activeComponentMetadata"
+      [websiteMode]="websiteMode"
+      [previewMode]="previewMode"
+      [activeScreenSize]="activeScreenSize"
+      [activeOrientation]="activeOrientation"
+      [activeSetting]="activeSetting"
+      [activePage]="activePage"
+      style="outline: 0;"
+    >
+    </app-builder-section>
+    <ng-container *ngIf="!previewMode && !websiteMode">
+      <app-builder-placeholder
+        *ngSwitchCase="'placeholder'"
+        [attr.id]="component.componentId"
+        [attr.name]="component.componentName"
+        [componentId]="component.componentId"
+        [activeDragData]="activeDragData"
+        [index]="i"
+      ></app-builder-placeholder>
+    </ng-container>
+  </div>
+</div>
+<div *ngIf="!previewMode && !websiteMode" draggable="false" class="row" style="height: 90vh;"></div>

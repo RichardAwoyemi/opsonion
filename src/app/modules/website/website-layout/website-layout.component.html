@@ -1,0 +1,5 @@
+<div class="website-layout-container">
+  <div *ngFor="let component of pageComponents; let i = index">
+    <app-builder-dynamic-html [content]="component"></app-builder-dynamic-html>
+  </div>
+</div>

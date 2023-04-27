@@ -1,0 +1,76 @@
+<button
+  (click)="toggleFontColourSidebar()"
+  class="toolbar-button toolbar-font-colour-button-class {{ buttonClass }}"
+  aria-label="Text color"
+  type="button"
+>
+  <span class="toolbar-font-colour-button-contents-outer">
+    <div
+      class="toolbar-font-colour-button-contents-inner"
+    >
+      <span
+        aria-hidden="true"
+        class="toolbar-font-colour-letter"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          style="
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 1.6;
+            cursor: pointer;
+            color: #0e1318;
+            width: 100%;
+            height: 100%;
+            display: block;
+          "
+        >
+          <path
+            d="M11 2L5.5 16h2.25l1.12-3h6.25l1.12 3h2.25L13 2h-2zm-1.38 9L12 4.67 14.38 11H9.62z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </span>
+      <div
+        class=""
+        style="
+          user-select: none;
+          -webkit-tap-highlight-color: transparent;
+          -webkit-font-smoothing: antialiased;
+          line-height: 1.6;
+          cursor: pointer;
+          color: #0e1318;
+          position: absolute;
+          bottom: 1px;
+          width: 90%;
+          height: 5px;
+          border-radius: 3px;
+          left: 5%;
+        "
+      >
+        <div
+          class="toolbar-font-colour-spectrum"
+          style="
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            cursor: pointer;
+            color: #0e1318;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 0 1px rgba(14, 19, 24, 0.15);
+            background-image: url(assets/img/toolbar-font-colour-spectrum.png);
+            background-size: 100% 100%;
+            border-radius: 4px;
+          "
+        ></div>
+      </div></div
+  ></span></button
+>&nbsp;

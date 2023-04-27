@@ -1,0 +1,32 @@
+<div
+  [ngClass]="
+    this.animationState[element.elementId]?.entrance
+      ? element?.animation?.entrance?.class
+      : 'hidden-item'
+  "
+  style="animation-duration: 2s;"
+>
+  <div
+    (mouseenter)="setHoverAnimationState(true)"
+    (mouseleave)="setHoverAnimationState(false)"
+    class="hover-element-animation"
+    [ngClass]="
+      this.animationState[element.elementId]?.entrance && this.isHovered
+        ? element?.animation?.hover?.class
+        : ''
+    "
+    style="animation-duration: 2s; animation-iteration-count: infinite;"
+  >
+    <div
+      class="default-element-animation"
+      [ngClass]="
+        this.animationState[element.elementId]?.entrance ? element?.animation?.default?.class : ''
+      "
+      style="animation-duration: 2s; animation-iteration-count: infinite;"
+    >
+      <div class="hide-overflow">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

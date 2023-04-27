@@ -1,0 +1,37 @@
+<div
+  [ngClass]="
+    !(componentActive && componentIndex === activeElementIndex
+      ? elementClass
+      : 'component-element-preview')
+  "
+  [attr.id]="element.elementId"
+  class="section-item"
+  [style]="
+    collapseLayout
+      ? {
+          position: 'relative',
+          transform: '',
+          width: '100%',
+          height: element?.height + 'vw',
+          display: 'block'
+        }
+      : {
+          position: 'absolute',
+          transform:
+            'translate3d(' + element?.translate.x + 'vw, ' + element?.translate?.y + 'vw, 0)',
+          width: element?.width + 'vw',
+          height: element?.height + 'vw',
+          display: 'block'
+        }
+  "
+  (click)="select($event); $event.stopPropagation()"
+  (dblclick)="select($event); $event.stopPropagation()"
+  [draggable]="true"
+  (dragstart)="dragStart($event); $event.stopPropagation(); $event.preventDefault()"
+  (drag)="$event.preventDefault()"
+  (mousemove)="mouseMove($event)"
+  (keydown.delete)="remove($event)"
+  (keydown.backspace)="remove($event)"
+>
+  <ng-content></ng-content>
+</div>

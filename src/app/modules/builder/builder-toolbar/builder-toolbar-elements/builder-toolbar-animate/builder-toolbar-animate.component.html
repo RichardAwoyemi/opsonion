@@ -1,0 +1,7 @@
+<button
+  (click)="toggleAnimateSidebar()"
+  [attr.data-cy]="'toolbar-' + (settings.displayText | lowercase) + '-button'"
+  class="toolbar-button toolbar-animate-button {{ buttonClass }}"
+>
+  <img style="height: 24px;" src="assets/img/toolbar-animate.svg" /></button
+>&nbsp;

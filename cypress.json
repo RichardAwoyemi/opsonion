@@ -1,0 +1,12 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "viewportWidth": 1280,
+  "viewportHeight": 720,
+  "video": false,
+  "projectId": "3732c1a0-d7fe-4565-951d-dd62bbd91158",
+  "supportFile": "cypress/support/index.js",
+  "numTestsKeptInMemory": 0,
+  "env": {
+    "RETRIES": 3
+  }
+}

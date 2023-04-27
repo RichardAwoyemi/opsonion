@@ -1,0 +1,84 @@
+<!--suppress HtmlUnknownTag -->
+<div class="dropdown" style="display: inline-flex;">
+  <button
+    (click)="toggleDropdown()"
+    [attr.data-cy]="'builder-toolbar-font-size'"
+    [class]="setButtonClass()"
+    id="dropdownMenuButton"
+    style="
+      min-width: 0;
+      max-width: 100%;
+      display: inline-flex;
+      border-color: transparent;
+      align-items: center;
+      padding: 0.35rem 0.3rem;
+      font-size: 1rem;
+    "
+    type="button"
+  >
+    <span style="vertical-align: middle; width: fit-content; padding: 0;">
+      <label for="toolbarFontSizeInput"></label>
+      <input
+        (keyup)="setDropdownOption(fontSize)"
+        [(ngModel)]="fontSize"
+        [attr.data-cy]="'builder-toolbar-font-size-input'"
+        class="toolbar-font-size-input"
+        id="toolbarFontSizeInput"
+        min="1"
+        pattern="\d*"
+        step="0.1"
+        type="number"
+        value="{{ fontSize }}"
+      />
+    </span>
+    <span
+      style="display: flex; justify-content: center; flex-shrink: 0; background-color: inherit;"
+    >
+      <svg
+        fill="none"
+        height="1rem"
+        viewBox="0 0 25 24"
+        width="1rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.5 9L12.5 15L18.5 9"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </span>
+  </button>
+  <div
+    *ngIf="showDropdown"
+    class="dropdown-menu sidebar-scroll"
+  >
+    <a
+      (click)="setDropdownOption(option)"
+      *ngFor="let option of menuOptions; let i = index"
+      [attr.data-cy]="'builder-sidebar-menu-layout-select-' + option"
+      [class]="setActiveClass(option)"
+      [innerText]="option"
+    >
+      <div *ngIf="option == fontSize" style="float: right; height: 100%;">
+        <svg
+          fill="none"
+          height="1.2rem"
+          viewBox="0 0 25 25"
+          width="1.2rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20.5 6.5L9.5 17.5L4.5 12.5"
+            stroke="black"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+    </a>
+  </div>
+</div>&nbsp;

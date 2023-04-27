@@ -1,0 +1,29 @@
+<p [ngClass]="setButtonAlignment(position)">
+  <button (click)="googleSignIn()" class="btn btn-label btn-google" id="googleSignIn" type="button">
+    <label>
+      <fa-icon [icon]="['fab', 'google']" size="xs"></fa-icon>
+    </label>
+    Sign in with Google
+  </button>
+  <button
+    (click)="facebookSignIn()"
+    class="btn btn-label btn-facebook"
+    id="facebookSignIn"
+    type="button"
+  >
+    <label>
+      <fa-icon [icon]="['fab', 'facebook-f']" size="xs"></fa-icon>
+    </label>
+    Sign in with Facebook
+  </button>
+</p>
+<p [ngClass]="setButtonAlignment(position)">
+  <small>
+    <a class="text-muted small-2" id="emailSignIn" routerLink="/register"
+      >or use your email address&nbsp;&nbsp;<fa-icon
+        [icon]="['fas', 'long-arrow-alt-right']"
+        size="xs"
+      ></fa-icon>
+    </a>
+  </small>
+</p>

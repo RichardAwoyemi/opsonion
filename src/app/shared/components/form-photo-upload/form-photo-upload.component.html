@@ -1,0 +1,29 @@
+<div [ngStyle]="setupUserProfilePhoto()">
+  <div *ngIf="!hideImageProfilePicture">
+    <img
+      (error)="handleImageError()"
+      *ngIf="user.photoURL"
+      alt="avatar"
+      class="avatar avatar-xl"
+      src="{{ user.photoURL }}"
+    />
+  </div>
+  <div *ngIf="!hideImageProfilePicture">
+    <img
+      *ngIf="!user.photoURL"
+      alt="avatar"
+      class="avatar avatar-xl"
+      src="../../../../assets/img/anonymous.jpg"
+    />
+  </div>
+</div>
+<div *ngIf="!(isMobile | async)?.matches" style="text-align: center; padding-top: 1em;">
+  <label class="btn btn-xs btn-secondary btn-file">
+    <input
+      (change)="fileChangeEvent($event)"
+      accept="image/x-png,image/gif,image/jpeg,image/svg+xml"
+      type="file"
+    />
+    <span>Upload</span>
+  </label>
+</div>

@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./tsconfig.eslint.json"
+    },
+    {
+      "path": "./tsconfig.e2e.json"
+    }
+  ]
+}

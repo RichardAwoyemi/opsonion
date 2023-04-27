@@ -1,0 +1,101 @@
+<section-wrapper
+  *ngIf="component"
+  [component]="component"
+  [componentMetadata]="componentMetadata"
+  [activeComponentMetadata]="activeComponentMetadata"
+  [cyTag]="'section-component'"
+  [previewMode]="previewMode"
+  [websiteMode]="websiteMode"
+  [outerStyle]="component?.style"
+  [componentActive]="componentActive"
+  [activeSetting]="activeSetting"
+  [showcaseDocument]="showcaseDocument"
+  (clearSettings)="clearSettings()"
+>
+  <div
+    class="section-component"
+    #sectionComponent
+    [attr.id]="component?.componentId + '-contents'"
+    [style]="{ height: collapseLayout ? 'auto' : component?.height + 'vw' }"
+    (drop)="dropElement($event); $event.stopPropagation()"
+    (mousemove)="elementMouseMove($event); $event.stopPropagation()"
+    (mouseup)="elementDragEnd(); $event.stopPropagation()"
+    (dragend)="elementDragEnd(); $event.stopPropagation()"
+    (mouseover)="$event.stopPropagation()"
+    (dragover)="$event.stopPropagation(); $event.preventDefault()"
+    (drag)="$event.stopPropagation(); $event.preventDefault()"
+  >
+    <section-alignment
+      [collapseLayout]="collapseLayout"
+      [previewMode]="previewMode"
+      [filteredElementCords]="filteredElementCords"
+    ></section-alignment>
+    <section-element-resize
+      *ngIf="
+        activeComponentMetadata &&
+        componentActive &&
+        (component?.elements)[activeElementIndex] &&
+        !collapseLayout &&
+        !previewMode &&
+        !websiteMode
+      "
+      [activeElement]="component.elements[activeElementIndex]"
+      [componentMetadata]="componentMetadata"
+      [showcaseDocument]="showcaseDocument"
+      [collapseLayout]="collapseLayout"
+      [activeAction]="activeAction"
+      (align)="setAlignment($event, true)"
+      (dragEnd)="elementDragEnd()"
+      (elementChange)="setElement($event)"
+      (resize)="setPreviousElement()"
+      (startResize)="startElementResize($event)"
+    ></section-element-resize>
+    <section-element-wrapper
+      (mousedown)="$event.stopPropagation()"
+      *ngFor="let element of component?.elements; let i = index; trackBy: trackByFn"
+      [activeElementIndex]="activeElementIndex"
+      [collapseLayout]="collapseLayout"
+      [componentActive]="componentActive"
+      [componentIndex]="i"
+      [element]="element"
+      [elementClass]="elementClass"
+      [previewMode]="previewMode"
+      [websiteMode]="websiteMode"
+      [showcaseDocument]="showcaseDocument"
+      [isContentEditable]="isContentEditable"
+      (selectElement)="selectElement($event)"
+      (deleteElement)="deleteElement($event)"
+      (elementDragStart)="elementDragStart($event)"
+      (elementMouseMove)="elementMouseMove($event)"
+      (elementDragEnd)="elementDragEnd()"
+    >
+      <section-element-link
+        [element]="element"
+        [previewMode]="previewMode"
+        [websiteMode]="websiteMode"
+      >
+        <section-animation [animationState]="animationState" [element]="element">
+          <section-elements
+            [activeComponentMetadata]="activeComponentMetadata"
+            [componentActive]="componentActive"
+            [componentMetadata]="componentMetadata"
+            [element]="element"
+            [isContentEditable]="isContentEditable"
+            [websiteMode]="websiteMode"
+          ></section-elements>
+        </section-animation>
+      </section-element-link>
+    </section-element-wrapper>
+    <div
+      *ngIf="componentActive && !collapseLayout && !previewMode"
+      [draggable]="true"
+      (dragstart)="startSectionResize($event); $event.stopPropagation()"
+      (drag)="resizeSection($event); $event.stopPropagation()"
+      (dragEnd)="clearSettings()"
+      class="resize-crop-container-y"
+      [style]="{ bottom: '-5px', height: '10px' }"
+    >
+      <div class="resize-crop-handle-y"></div>
+    </div>
+  </div>
+</section-wrapper>

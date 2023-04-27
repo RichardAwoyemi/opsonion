@@ -1,0 +1,36 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">
+      {{ websiteName }}
+    </h5>
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'modal-close'"
+      class="close"
+      type="button"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    Are you sure you want to delete this website?
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onConfirmButtonClick()"
+      [attr.data-cy]="'dashboard-delete-website-modal-confirm-button'"
+      class="btn btn-secondary"
+      type="button"
+    >
+      Yes</button
+    >&nbsp;
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'dashboard-delete-website-modal-cancel-button'"
+      class="btn btn-secondary"
+      type="button"
+    >
+      No
+    </button>
+  </div>
+</div>

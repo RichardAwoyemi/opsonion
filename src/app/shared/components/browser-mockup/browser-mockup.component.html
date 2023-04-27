@@ -1,0 +1,22 @@
+<ng-container *ngIf="!view">
+  <div class="browser-mockup">
+    <img alt="" src="{{ img }}" />
+  </div>
+</ng-container>
+<ng-container *ngIf="view == 'template'">
+  <div
+    (mouseleave)="setImageOpacity(1.0)"
+    (mouseover)="setImageOpacity(0.1)"
+    class="browser-mockup template-mockup"
+  >
+    <button
+      (click)="createWebsite()"
+      class="btn btn-primary btn-block btn-sm edit"
+      style="z-index: 100;"
+    >
+      Edit
+    </button>
+    <!-- <button class="btn btn-outline-primary btn-block btn-sm preview-btn" style="z-index: 100">Preview</button> -->
+    <img [ngStyle]="imageStyle" alt="template-img" src="{{ img }}" />
+  </div>
+</ng-container>

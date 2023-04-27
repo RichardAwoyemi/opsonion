@@ -1,0 +1,291 @@
+body,
+html {
+  overflow-x: hidden;
+  margin-top: 0;
+}
+
+div {
+  display: block;
+}
+
+.fw-200 {
+  font-weight: bold !important;
+}
+
+/* Forms */
+
+.form-input-background-image {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: 16px 18px;
+  background-position: 98% 50%;
+}
+
+/* Navbar */
+
+.navbar {
+  top: 0;
+  position: unset;
+}
+
+.navbar-toggler {
+  margin-right: 0;
+}
+
+.nav-item {
+  margin: 0.25em;
+}
+
+.nav-item a {
+  transition: unset;
+}
+
+.nav-item a:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    width: 70% !important;
+  }
+}
+
+#navbar-logo-image:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-item > a {
+    padding-left: 0 !important;
+  }
+}
+
+/* Hero */
+
+.jumbotron {
+  background-color: unset;
+  border-radius: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-heading-active,
+  .hero-heading-preview {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+/* Features */
+
+@media only screen and (max-width: 768px) {
+  .feature-item {
+    padding: 0 !important;
+  }
+}
+
+/* Footer */
+
+@media only screen and (max-width: 768px) {
+  footer {
+    padding-top: 30px !important;
+  }
+}
+
+footer > div {
+  font-family: unset !important;
+}
+
+.footer-page-links:hover {
+  cursor: pointer;
+}
+
+.footer-social-links span {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: inherit;
+  font-size: 1rem;
+  border-radius: 3px;
+  opacity: 0.8;
+}
+
+.footer-social-links span:hover {
+  opacity: 1;
+}
+
+/* Team Cards */
+.team-card-grid-container {
+  justify-content: center;
+}
+
+.team-card-grid-container[data-column='1'] .team-card-grid {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  flex-basis: 100%;
+}
+
+.team-card-grid-container[data-column='2'] .team-card-grid {
+  width: 50%;
+  max-width: 50%;
+  min-width: 50%;
+  flex-basis: 50%;
+}
+
+.team-card-grid-container[data-column='3'] .team-card-grid {
+  width: 33.3333333333%;
+  max-width: 33.3333333333%;
+  min-width: 33.3333333333%;
+  flex-basis: 33.3333333333%;
+}
+
+.team-card-grid-container[data-column='4'] .team-card-grid {
+  width: 25%;
+  max-width: 25%;
+  min-width: 25%;
+  flex-basis: 25%;
+}
+
+.team-card-grid-container[data-column='5'] .team-card-grid {
+  width: 20%;
+  max-width: 20%;
+  min-width: 20%;
+  flex-basis: 20%;
+}
+
+.team-card-grid-container[data-column='6'] .team-card-grid {
+  width: 16.6666666667%;
+  max-width: 16.6666666667%;
+  min-width: 16.6666666667%;
+  flex-basis: 16.6666666667%;
+}
+
+.team-card-grid-container[data-column='7'] .team-card-grid {
+  width: 14.2857142857%;
+  max-width: 14.2857142857%;
+  min-width: 14.2857142857%;
+  flex-basis: 14.2857142857%;
+}
+
+.team-card-grid-container[data-column='8'] .team-card-grid {
+  width: 12.5%;
+  max-width: 12.5%;
+  min-width: 12.5%;
+  flex-basis: 12.5%;
+}
+
+.team-card-grid-container[data-column='9'] .team-card-grid {
+  width: 11.1111111111%;
+  max-width: 11.1111111111%;
+  min-width: 11.1111111111%;
+  flex-basis: 11.1111111111%;
+}
+
+.team-cards-container {
+  margin: 0 auto;
+}
+
+div.grid-popout {
+  z-index: 0;
+  box-shadow: 0 0 0 0.0675rem #e2e9ed;
+  -webkit-transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, z-index 0s 0.2s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease,
+    -webkit-transform 0.2s ease;
+}
+
+div.grid-popout:hover {
+  z-index: 1;
+  box-shadow: 0 0.5rem 3.125rem rgba(0, 0, 0, 0.2);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: box-shadow 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, z-index 0s 0s ease, -webkit-transform 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease,
+    -webkit-transform 0.2s ease;
+}
+
+.team-card-grid::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.team-card-grid:hover .team-card-social {
+  margin: 1rem 0 0;
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .team-card-grid {
+    width: 50% !important;
+    max-width: 50% !important;
+    min-width: 50% !important;
+    flex-basis: 50% !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-card-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    flex-basis: 100% !important;
+  }
+}
+
+.team-card-person {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  text-align: center;
+}
+
+ul.team-card-social {
+  padding: 0;
+  margin: 0 0 -1.125rem;
+  opacity: 0;
+  -webkit-transition: margin 0.2s ease, opacity 0.2s ease;
+  transition: margin 0.2s ease, opacity 0.2s ease;
+}
+
+li.team-card-social__item {
+  display: inline-block;
+  margin: 0 0.5125rem;
+}
+
+li.team-card-social__item > a {
+  display: block;
+}
+
+.team-card-social__item svg {
+  fill: #515f65;
+  display: block;
+  height: 1.125rem;
+  -webkit-transition: fill 0.2s ease;
+  transition: fill 0.2s ease;
+}
+
+.team-card-social__item svg:hover {
+  fill: #788d96;
+}
+
+/* Text editor */
+
+app-builder-text-editor ul,
+app-builder-text-editor ol {
+  margin-left: 10px;
+  margin-right: 0;
+  padding-left: 10px;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}

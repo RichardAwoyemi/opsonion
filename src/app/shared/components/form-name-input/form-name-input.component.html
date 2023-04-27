@@ -1,0 +1,41 @@
+<div class="form-group">
+  <label>Legal Name <span class="text-danger">*</span></label>
+  <div class="row">
+    <div class="col-md-6">
+      <label style="width: 100%;">
+        <input
+          (blur)="onChangeUpdateFirstName()"
+          (change)="firstName = firstName.trim(); onChangeUpdateFirstName()"
+          [(ngModel)]="firstName"
+          class="form-control"
+          name="firstName"
+          placeholder="First Name"
+          type="text"
+        />
+      </label>
+    </div>
+    <div class="col-md-6">
+      <label style="width: 100%;">
+        <input
+          (blur)="onChangeUpdateLastName()"
+          (change)="lastName = lastName.trim(); onChangeUpdateLastName()"
+          [(ngModel)]="lastName"
+          class="form-control"
+          name="lastName"
+          placeholder="Last Name"
+          type="text"
+        />
+      </label>
+    </div>
+    <div class="col-md-12">
+      <div *ngIf="showFirstNameInputError['status']">
+        <small class="text-danger">First Name is required</small>
+        <br *ngIf="showFirstNameInputError['status'] && showLastNameInputError['status']" />
+      </div>
+      <div *ngIf="showLastNameInputError['status']">
+        <small class="text-danger">Last Name is required</small>
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.input-group {
+  background-color: #fff;
+}
+
+.form-control {
+  font-size: 12px;
+}
+
+.reset-search-text-button {
+  color: rgba(14, 19, 24, 0.45);
+  transition: 0.3s;
+}
+
+.reset-search-text-button:hover {
+  color: rgba(14, 19, 24, 0.8);
+  cursor: pointer;
+}
+
+.builder-sidebar-text-search:-webkit-autofill {
+  color: #fff !important;
+}

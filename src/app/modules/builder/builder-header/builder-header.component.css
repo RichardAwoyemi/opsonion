@@ -1,0 +1,35 @@
+.bg-light,
+.navbar-light {
+  background: #2055ec !important;
+}
+
+.navbar-divider {
+  display: inline-block;
+  height: 20px;
+  width: 1px;
+  background-color: #fff;
+  margin: 0 1rem;
+  padding-top: 1em;
+  opacity: 0.3;
+}
+
+.dropdown-item:hover {
+  cursor: pointer;
+}
+
+.website-name {
+  color: #fff;
+  font-size: 1em;
+  float: right;
+  margin-left: 0.75em;
+  margin-top: 2px;
+}
+
+.website-name:hover {
+  cursor: text;
+}
+
+#builder-header-website-name {
+  text-transform: lowercase;
+  outline: none;
+}

@@ -1,0 +1,117 @@
+.fonts-icon:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.form-control {
+  font-size: 12px;
+}
+
+.container-padding-vertical {
+  padding: 1.25rem 0 5rem;
+  height: inherit;
+  flex: 1 1 0;
+}
+
+.container-padding-horizontal {
+  padding: 0 1.25rem;
+  height: auto;
+  flex: 1 1 0;
+}
+
+.sidebar-colour-section {
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: all;
+  position: relative;
+  margin-bottom: 1.5vw;
+}
+
+.sidebar-colour-header-container {
+  justify-content: space-between;
+  display: flex;
+  flex: 1 0;
+  color: rgba(14, 19, 24, 0.45);
+  margin: 8px 8px 4px;
+}
+
+.sidebar-colour-header-contents {
+  color: rgba(14, 19, 24, 0.45);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0 8px;
+}
+
+.toolbar-colour-sidebar-colour-button-contents {
+  transition: opacity 0.15s ease-in-out, box-shadow 0.2s ease-in-out;
+  left: 1px;
+  right: 1px;
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  width: 100%;
+  height: 100%;
+  padding-top: 100%;
+  content: '';
+  display: block;
+  border-radius: 4px;
+  box-shadow: inset rgba(0, 0, 0, 0.25) 0 0 2px 0;
+}
+
+.active-colour {
+  box-shadow: 0 0 0 2px #00c4cc, inset 0 0 0 2px #fff;
+}
+
+.toolbar-colour-sidebar-grid {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(6, 1fr);
+  grid-row-gap: 3.2vw;
+  grid-column-gap: 0.6vw;
+  margin: 8px 16px 24px;
+}
+
+.container-fluid {
+  min-height: fit-content;
+  flex-wrap: wrap;
+  display: flex;
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.45rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.col-2 {
+  height: 3vw;
+  padding: 0.4vw;
+}
+
+button.toolbar-colour-sidebar-colour-button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 2px;
+  display: flex;
+}
+
+:host ::ng-deep color-picker > div > div.hue-alpha.box > div.left {
+  display: none !important;
+}
+
+:host ::ng-deep color-picker > div > div.hue-alpha.box > div.right > div.hue > div.cursor {
+  position: relative;
+  width: 15px;
+  box-shadow: 0 0 5px 1px rgba(14, 19, 24, 0.15), 0 0 0 1px rgba(14, 19, 24, 0.2);
+  border: none;
+  height: 15px;
+  background-color: white;
+  border-radius: 75%;
+  cursor: default;
+}

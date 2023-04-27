@@ -1,0 +1,14 @@
+<ng-container *ngIf="!collapseLayout && !previewMode && filteredElementCords">
+  <ng-container *ngFor="let elementCords of filteredElementCords">
+    <div
+      *ngFor="let style of elementCords.styles"
+      [ngStyle]="style"
+      style="
+        will-change: display, top, left;
+        border: '1px dashed #E95EFF';
+        position: 'absolute';
+        z-index: 10000;
+      "
+    ></div>
+  </ng-container>
+</ng-container>

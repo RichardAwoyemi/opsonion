@@ -1,0 +1,16 @@
+<div
+  *ngIf="displayOption"
+  style="height: inherit; display: block;"
+  id="{{ element.elementId + '-container' }}"
+  tabindex="-1"
+>
+  <app-builder-text-editor
+    [contenteditable]="contenteditable"
+    (valueChange)="setText($event)"
+    [(value)]="text"
+    [ngStyle]="style"
+    tabindex="-1"
+    style="height: inherit; display: block; box-sizing: border-box;"
+  >
+  </app-builder-text-editor>
+</div>

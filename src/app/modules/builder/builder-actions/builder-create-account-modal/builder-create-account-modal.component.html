@@ -1,0 +1,33 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">Create account</h5>
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'modal-close'"
+      class="close builder-modal create-account-close-cross"
+      type="button"
+    >
+      <span aria-hidden="true" class="builder-modal create-account-close-cross">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    <button (click)="googleSignIn()" class="btn btn-lg btn-block btn-secondary" type="button">
+      Continue with Google
+    </button>
+    <button (click)="facebookSignIn()" class="btn btn-lg btn-block btn-secondary" type="button">
+      Continue with Facebook
+    </button>
+    <button (click)="emailSignIn()" class="btn btn-lg btn-block btn-secondary" type="button">
+      Continue with Email
+    </button>
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onCloseButtonClick()"
+      class="btn btn-secondary builder-modal create-account-close-button"
+      type="button"
+    >
+      Close
+    </button>
+  </div>
+</div>

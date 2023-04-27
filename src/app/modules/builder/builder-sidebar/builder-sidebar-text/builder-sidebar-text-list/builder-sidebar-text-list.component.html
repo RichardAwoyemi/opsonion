@@ -1,0 +1,32 @@
+<div *ngIf="textItemsLoaded; else skeletonTextItemsContainer">
+  <div
+    infinite-scroll
+    (scrolled)="onScrollDown()"
+    [scrollWindow]="false"
+    class="text-item-listing"
+    [ngStyle]="{ height: textItemListingInnerHeight + 'px' }"
+  >
+    <div *ngIf="isActiveSearchTermPresent; else defaultTextItemsContainer"></div>
+    <div
+      class="text-item-container text-item-container-{{ i }}"
+      *ngFor="let textItem of textItems; let i = index"
+      [@fadeIn]
+    >
+      <div
+        class="text-item"
+        (click)="onClick(textItem.metadata)"
+        [innerHTML]="textItem.svg | safeHtml"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<ng-template #skeletonTextItemsContainer>
+  <app-builder-sidebar-skeleton-text-list></app-builder-sidebar-skeleton-text-list>
+</ng-template>
+
+<ng-template #defaultTextItemsContainer>
+  <app-builder-sidebar-default-text-list
+    [activeComponentMetadata]="activeComponentMetadata"
+  ></app-builder-sidebar-default-text-list>
+</ng-template>

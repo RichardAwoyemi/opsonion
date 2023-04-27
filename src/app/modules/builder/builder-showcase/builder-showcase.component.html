@@ -1,0 +1,42 @@
+<app-builder-toolbar
+[activeComponentMetadata]="activeComponentMetadata"
+[activeToolbarElement]="activeToolbarElement"
+[website]="website"
+[activeFontName]="activeFontName"
+[activeSetting]="activeSetting">
+</app-builder-toolbar>
+<div
+  (click)="clearActiveComponent()"
+  [attr.data-cy]="'showcase-backdrop'"
+  [ngStyle]="{ height: innerHeight - showcaseHeight + 'px' }"
+  class="showcase-backdrop"
+>
+  <div style="width: 100%;">
+    <app-builder-showcase-toolbar
+    [previewButtonIcon]="previewButtonIcon"
+    [fullScreenButtonIcon]="fullScreenButtonIcon"
+    [activeOrientation]="activeOrientation"
+    [activePage]="activePage"
+    [activePageIndex]="activePageIndex"
+    [previewMode]="previewMode"
+    [fullScreenMode]="fullScreenMode"
+    [website]="website"
+    ></app-builder-showcase-toolbar>
+  </div>
+  <div class="shepherd-step-2" style="display: flex; justify-content: center;">
+    <div
+      [attr.data-cy]="'showcase-holder'"
+      [ngClass]="activeOrientation"
+      [ngStyle]="{ height: innerHeight - iframeHolderHeight + 'px' }"
+      class="showcase-holder"
+    >
+      <iframe
+        #iframe
+        [attr.data-cy]="'builder-showcase'"
+        [ngStyle]="{ height: innerHeight - iframeHeight + 'px' }"
+        id="builder-showcase"
+        style="width: 100%; height: 100%; border: 0; display: block;"
+      ></iframe>
+    </div>
+  </div>
+</div>

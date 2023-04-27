@@ -1,0 +1,46 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">Create new page</h5>
+    <button (click)="onCloseButtonClick()" class="builder-modal page-new-cross close" type="button">
+      <span aria-hidden="true" class="builder-modal page-new-cross">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    <div *ngIf="displayError" class="alert alert-danger" role="alert">
+      A page with this name already exists.
+    </div>
+    Please enter a name for your new page.
+    <div class="form-group">
+      <label for="pageName"></label>
+      <input
+        (change)="pageName = pageName.trim(); displayError = false"
+        (keyup)="validatePageName()"
+        [(ngModel)]="pageName"
+        [attr.data-cy]="'page-new-input'"
+        blockNonAlphabetCharacters
+        class="form-control"
+        id="pageName"
+        type="text"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onConfirmButtonClick()"
+      [attr.data-cy]="'page-new-save'"
+      [disabled]="disableSaveButton"
+      class="builder-modal page-new-save btn btn-secondary"
+      type="button"
+    >
+      Save</button
+    >&nbsp;
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'page-new-cancel'"
+      class="builder-modal page-new-cancel btn btn-secondary"
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

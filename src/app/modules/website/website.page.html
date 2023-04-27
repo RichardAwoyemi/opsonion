@@ -1,0 +1,15 @@
+<div *ngIf="isLoggedIn()" style="height: 56px;">
+  <app-website-header></app-website-header>
+</div>
+<app-website-layout></app-website-layout>
+<a
+  [attr.href]="'https://opsonion.com?utm_source=' + websiteId + '&utm_medium=website&utm_campaign=badge'"
+  class="opsonion-badge"
+>
+  <img
+    alt="Opsonion logo"
+    src="../../../assets/img/opsonion-badge.svg"
+    style="margin-right: 8px; width: 22px;"
+  />
+  <div class="opsonion-badge-text">Built with Opsonion</div>
+</a>

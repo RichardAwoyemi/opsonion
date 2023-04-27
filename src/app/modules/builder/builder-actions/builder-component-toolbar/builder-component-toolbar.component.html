@@ -1,0 +1,26 @@
+<div
+  class="component-toolbar-holder"
+  style="display: flex; align-items: flex-start; justify-content: flex-end;"
+>
+  <div
+    *ngIf="toggleComponentToolbarVisibility()"
+    [attr.data-cy]="componentName + '-component-toolbar'"
+    class="component-toolbar"
+  >
+    <div class="btn-group mr-2" role="group">
+      <div class="component-toolbar-text">
+        <div style="display: inline-block;">
+          {{ componentId | lowercase }}
+        </div>
+      </div>
+      <button
+        (click)="deleteComponent()"
+        [attr.class]="'btn btn-secondary close-component-button ' + componentName + '-close-button'"
+        [attr.data-cy]="componentName + '-close-button'"
+        type="button"
+      >
+        <i [attr.class]="'ti-close close-component-cross ' + componentName + '-close-cross'"></i>
+      </button>
+    </div>
+  </div>
+</div>

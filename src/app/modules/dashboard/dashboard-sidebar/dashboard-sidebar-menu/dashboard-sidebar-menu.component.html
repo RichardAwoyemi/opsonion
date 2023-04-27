@@ -1,0 +1,65 @@
+<ng-container *ngIf="user.firstName && user.lastName">
+  <div class="col-md-12" style="margin-top: -1em; margin-bottom: -1em;">
+    <a
+      (click)="setActiveSidebar(ACTIVE_SIDEBAR_WEBSITES)"
+      [attr.data-cy]="'dashboard-sidebar-website-link'"
+      [ngClass]="setActiveSidebarClass(ACTIVE_SIDEBAR_WEBSITES)"
+      href="#"
+      style="padding-left: 0; font-size: 18px;"
+      >Websites</a
+    >
+    <a
+      (click)="setActiveSidebar(ACTIVE_SIDEBAR_TEMPLATES)"
+      [attr.data-cy]="'dashboard-sidebar-templates-link'"
+      [ngClass]="setActiveSidebarClass(ACTIVE_SIDEBAR_TEMPLATES)"
+      href="#"
+      style="padding-left: 0; font-size: 18px;"
+      >Templates</a
+    >
+    <a
+      (click)="setActiveSidebar(ACTIVE_SIDEBAR_SETTINGS)"
+      [attr.data-cy]="'dashboard-sidebar-settings-link'"
+      [ngClass]="setActiveSidebarClass(ACTIVE_SIDEBAR_SETTINGS)"
+      href="#"
+      style="padding-left: 0; font-size: 18px;"
+      >Settings</a
+    >
+    <a
+      (click)="setActiveSidebar(ACTIVE_SIDEBAR_REWARDS)"
+      [attr.data-cy]="'dashboard-sidebar-rewards-link'"
+      [ngClass]="setActiveSidebarClass(ACTIVE_SIDEBAR_REWARDS)"
+      href="#"
+      style="padding-left: 0; font-size: 18px;"
+      >Rewards</a
+    >
+    <a
+      (click)="signOut()"
+      [attr.data-cy]="'dashboard-sidebar-logout-link'"
+      class="nav-link"
+      href="#"
+      style="padding-left: 0; font-size: 18px;"
+      >Log Out</a
+    >
+  </div>
+</ng-container>
+<ng-container *ngIf="!user.firstName && !user.lastName">
+  <div class="col-md-12" style="margin-top: -1em; margin-bottom: -1em;">
+    <a
+      (click)="setActiveSidebar(ACTIVE_SIDEBAR_SETTINGS)"
+      [ngClass]="setActiveSidebarClass(ACTIVE_SIDEBAR_SETTINGS)"
+      href="#"
+      style="padding-left: 0; font-size: 18px;"
+      >Settings</a
+    >
+    <a
+      (click)="setActiveSidebar(ACTIVE_SIDEBAR_REWARDS)"
+      [ngClass]="setActiveSidebarClass(ACTIVE_SIDEBAR_REWARDS)"
+      href="#"
+      style="padding-left: 0; font-size: 18px;"
+      >Rewards</a
+    >
+    <a (click)="signOut()" class="nav-link" href="#" style="padding-left: 0; font-size: 18px;"
+      >Log Out</a
+    >
+  </div>
+</ng-container>

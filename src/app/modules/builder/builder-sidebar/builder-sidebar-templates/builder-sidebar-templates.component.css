@@ -1,0 +1,12 @@
+.template-icon:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.input-group {
+  background-color: #fff;
+}
+
+.form-control {
+  font-size: 12px;
+}

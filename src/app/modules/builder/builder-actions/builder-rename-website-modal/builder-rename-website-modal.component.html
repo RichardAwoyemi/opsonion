@@ -1,0 +1,35 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">Rename website</h5>
+    <button
+      (click)="onCloseButtonClick()"
+      class="builder-modal website-rename-cross close"
+      type="button"
+    >
+      <span aria-hidden="true" class="builder-modal website-rename-cross">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    Are you sure you want to rename this website from to <strong>{{ websiteName }}</strong> to
+    <strong>{{ newWebsiteName }}</strong
+    >?
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onConfirmButtonClick()"
+      [attr.data-cy]="'website-rename-yes'"
+      class="builder-modal website-rename-yes btn btn-secondary"
+      type="button"
+    >
+      Yes</button
+    >&nbsp;
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'website-rename-no'"
+      class="builder-modal website-rename-no btn btn-secondary"
+      type="button"
+    >
+      No
+    </button>
+  </div>
+</div>

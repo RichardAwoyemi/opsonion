@@ -1,0 +1,212 @@
+.sidebar-adjust-header {
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(14, 19, 24, 0.15);
+  margin-bottom: 4px;
+  height: 66px;
+  display: flex;
+}
+
+.sidebar-adjust-header-text {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.sidebar-adjust-outer-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidebar-adjust-horizontal-padding {
+  padding: 0 1rem;
+}
+
+.settings-table {
+  display: table;
+}
+
+label.settings-row {
+  display: table-row;
+  height: 2.5rem;
+}
+
+.settings-row-label {
+  height: 2.5rem;
+  font-size: 0.9rem;
+  display: table-cell;
+  white-space: nowrap;
+  vertical-align: middle;
+  max-width: 12rem;
+  text-align: right;
+  padding-right: 1rem;
+  margin: 0.5rem 0;
+  cursor: initial;
+}
+
+.settings-outer-container {
+  display: table-cell;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.settings-container-grid {
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 'slider numberInput';
+  height: 40px;
+  display: grid;
+  align-items: center;
+}
+
+.settings-row-slider {
+  grid-area: slider;
+  height: 1rem;
+}
+
+.settings-row-input {
+  grid-area: numberInput;
+  height: 1.5rem;
+  width: 2.5rem;
+  margin: 0 0 0 0.25rem;
+  text-align: center;
+  padding: 0;
+  background: #fff;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(14, 19, 24, 0.2);
+  cursor: text;
+  box-sizing: border-box;
+  outline: 0;
+  pointer-events: all;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.settings-row-outer-slider-container {
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.settings-row-range-input-container {
+  margin: 0;
+  cursor: pointer;
+  position: absolute;
+  width: calc(100% - 1rem);
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.settings-row-range-input {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 1rem);
+}
+
+.settings-row-slider-full-bar {
+  transform: translateY(-50%);
+  background-color: rgba(14, 19, 24, 0.15);
+  border-radius: 2px;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  height: 2px;
+}
+
+.settings-row-slider-midway-bar {
+  width: calc(50% - 2px);
+  min-width: 0;
+  max-width: calc(100% - 4px);
+}
+
+.settings-row-slider-midway-tick {
+  transform: translateY(-6px);
+  background-color: rgba(14, 19, 24, 0.15);
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+}
+
+.settings-row-slider-filled-bar {
+  width: 50%;
+  position: relative;
+  top: 50%;
+}
+
+.settings-row-current-fill {
+  transform: translateY(-50%);
+  background-color: #00c4cc;
+  border-radius: 2px;
+  position: relative;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  -webkit-transform: translateY(-50%);
+}
+
+.settings-row-slider-handle {
+  left: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-row-slider-handle::before {
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(14, 19, 24, 0.2);
+  position: absolute;
+  top: 50%;
+  content: '';
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  transition: -webkit-transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out, -webkit-transform 0.1s ease-in-out;
+}
+
+.settings-row-slider-handle::after {
+  border-radius: 50%;
+  background: none;
+  position: absolute;
+  top: 50%;
+  content: '';
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  transition: box-shadow 0.1s ease-in-out;
+}
+
+.settings-row-range-input-container:hover + .settings-row-range-input .settings-row-slider-handle {
+  box-shadow: 0 0 4px 1px rgba(14, 19, 24, 0.2);
+}
+
+.active-slider-handle {
+  box-shadow: 0 0 0 8px rgba(0, 196, 204, 0.5);
+  border: 1px solid #00afb5;
+}

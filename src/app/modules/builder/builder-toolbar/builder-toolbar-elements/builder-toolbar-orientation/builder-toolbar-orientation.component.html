@@ -1,0 +1,78 @@
+<button *ngIf="builderService.activeOrientation.getValue() === ACTIVE_DESKTOP_ORIENTATION"
+  (click)="setOrientationToolbarButtonClass(ACTIVE_DESKTOP_ORIENTATION)"
+  [attr.data-cy]="'toolbar-orientation-desktop-button'"
+  class="toolbar-orientation-desktop toolbar-button"
+>
+  <svg
+    aria-hidden="true"
+    class="toolbar-orientation-desktop"
+    focusable="false"
+    height="23"
+    style="transform: translate(0px, 0px); margin-bottom: 3px;"
+    width="33"
+  >
+    <path
+      class="toolbar-orientation-desktop"
+      d="M7 4h19v14H7z"
+      fill="currentColor"
+      opacity=".3"
+    ></path>
+    <path
+      class="toolbar-orientation-desktop"
+      d="M29 19H1v1.563h.02C1.135 21.358 3.32 22 6 22h21c2.68 0 4.866-.642 4.98-1.437H32V19h-3zM6 3h21v16h2V3c0-1.1-.9-2-2-2H5.947C4.847 1 4 1.9 4 3v16h2V3z"
+      fill="currentColor"
+    ></path>
+  </svg></button
+>
+<button *ngIf="builderService.activeOrientation.getValue() === ACTIVE_TABLET_ORIENTATION"
+  (click)="setOrientationToolbarButtonClass(ACTIVE_TABLET_ORIENTATION)"
+  [attr.data-cy]="'toolbar-orientation-tablet-button'"
+  class="toolbar-orientation-tablet toolbar-button"
+>
+  <svg
+    aria-hidden="true"
+    class="toolbar-orientation-tablet"
+    focusable="false"
+    height="24"
+    style="transform: translate(0px, 0px); margin-bottom: 3px;"
+    width="20"
+  >
+    <path
+      class="toolbar-orientation-tablet"
+      d="M17 1H3c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm-6 21H9v-2h2v2zm6-2.952H3V3h14v16.048z"
+      fill="currentColor"
+    ></path>
+    <path
+      class="toolbar-orientation-tablet"
+      d="M4 4h12v14H4z"
+      fill="currentColor"
+      opacity=".3"
+    ></path>
+  </svg></button
+>
+<button *ngIf="builderService.activeOrientation.getValue() === ACTIVE_MOBILE_ORIENTATION"
+  (click)="setOrientationToolbarButtonClass(ACTIVE_MOBILE_ORIENTATION)"
+  [attr.data-cy]="'toolbar-orientation-mobile-button'"
+  class="toolbar-orientation-mobile toolbar-button"
+>
+  <svg
+    aria-hidden="true"
+    class="toolbar-orientation-mobile"
+    focusable="false"
+    height="20"
+    style="transform: translate(0px, 0px); margin-bottom: 3px;"
+    width="14"
+  >
+    <path
+      class="toolbar-orientation-mobile"
+      d="M4 4h6v10H4z"
+      fill="currentColor"
+      opacity=".3"
+    ></path>
+    <path
+      class="toolbar-orientation-mobile"
+      d="M11 1H3c-1.1 0-2 .9-2 2v13.952C1 18.052 1.9 19 3 19h8c1.1 0 2-.947 2-2.048V3c0-1.1-.9-2-2-2zM8 18H6v-2h2v2zm3-3H3V3h8v12z"
+      fill="currentColor"
+    ></path>
+  </svg>
+</button>&nbsp;

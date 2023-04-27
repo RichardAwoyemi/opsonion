@@ -1,0 +1,39 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+      - echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
+      - apt-get -y update
+      - apt-get -y install google-chrome-stable
+      - curl -L ${CYPRESS_DIRECTOR_URL}/ping
+      - apt-get update -y
+      - apt-get install -y dbus-x11 apt-transport-https libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 xvfb libgtk-3-0 libnss3 libxss1 libasound2 libxtst6 xauth
+      - cd ${CODEBUILD_SRC_DIR}
+      - npm install
+      - npm install concurrently wait-on -g
+      - export TERM=xterm
+      - export DBUS_SESSION_BUS_ADDRESS=/dev/null
+      - sed -i -E "s@(api_url:) (.*)@\1 \"${CYPRESS_DIRECTOR_URL}/\"@g" /root/.cache/Cypress/*/Cypress/resources/app/packages/server/config/app.yml
+      - npm run check-rules
+  build:
+    commands:
+      - npm run test-headless
+      - npm run cy:verify
+      - npm run serve &
+      - Xvfb :99 &
+      - export DISPLAY=:99 &
+      - unset NODE_OPTIONS
+      - cat /root/.cache/Cypress/*/Cypress/resources/app/packages/server/config/app.yml
+      - CYPRESS_CI_RUN_COMMAND="npm run cy:run -- --record --key ci-tests --parallel --browser chrome --ci-build-id Runner-${CODEBUILD_START_TIME}-${CODEBUILD_BUILD_ID}"
+      - |
+      - wait-on http://localhost:4200 && concurrently \
+        "$CYPRESS_CI_RUN_COMMAND" \
+        "$CYPRESS_CI_RUN_COMMAND"
+      - pkill Xvfb
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: './cypress/results'

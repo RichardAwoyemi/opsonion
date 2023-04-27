@@ -1,0 +1,27 @@
+<div
+  class="text-item-container sidebar-text-item-container"
+  *ngFor="let textItemMetadata of textItemMetadataList; let i = index"
+  (click)="addElement(textItemMetadata)"
+>
+  <div class="text-item">
+    <svg
+      [attr.width]="textItemMetadata.svgProperties.width"
+      [attr.height]="textItemMetadata.svgProperties.height"
+      [attr.viewBox]="textItemMetadata.svgProperties.viewBox"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g
+        [attr.id]="textItemMetadata.svgProperties.id"
+        [attr.stroke-linecap]="textItemMetadata.svgProperties.strokeLinecap"
+        [attr.fill-rule]="textItemMetadata.svgProperties.fill"
+        [attr.font-size]="textItemMetadata.svgProperties.fontSize"
+        [attr.stroke]="textItemMetadata.svgProperties.stroke"
+        [attr.stroke-width]="textItemMetadata.svgProperties.strokeWidth"
+        [attr.fill]="textItemMetadata.svgProperties.fill"
+        [attr.style]="textItemMetadata.svgProperties.style"
+      >
+        <path [attr.d]="textItemMetadata.svgProperties.path"></path>
+      </g>
+    </svg>
+  </div>
+</div>

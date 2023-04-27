@@ -1,0 +1,34 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">Delete component</h5>
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'modal-close'"
+      class="builder-modal component-delete-cross close"
+      type="button"
+    >
+      <span aria-hidden="true" class="builder-modal component-delete-cross">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    Are you sure you want to delete this component?
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onConfirmButtonClick()"
+      [attr.data-cy]="'component-delete-yes'"
+      class="builder-modal component-delete-yes btn btn-secondary"
+      type="button"
+    >
+      Yes</button
+    >&nbsp;
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'component-delete-no'"
+      class="builder-modal component-delete-no btn btn-secondary"
+      type="button"
+    >
+      No
+    </button>
+  </div>
+</div>

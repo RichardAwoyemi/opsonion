@@ -1,0 +1,333 @@
+/* Content editable */
+
+[contenteditable]:focus {
+  outline: 0 solid transparent !important;
+}
+
+body::-webkit-scrollbar {
+  width: 0.31rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #dde2e8;
+}
+
+/* Component */
+
+app-builder-section {
+  box-sizing: unset !important;
+}
+
+.component-border {
+  border: 2px solid transparent !important;
+  transform: scale(0.95, 0.95) translate3d(0, 0, 0);
+}
+
+.component-border-placeholder {
+  border: 2px solid transparent !important;
+  transform: scale(0.95, 0.95) translate3d(0, 0, 0);
+}
+
+.component-border:hover {
+  cursor: pointer !important;
+  border: 2px solid #00d9e1 !important;
+  transition: all 0.5s ease;
+  transform: scale(1, 1) translate3d(0, 0, 0);
+  z-index: 1000;
+}
+
+.component-border:hover > *,
+.component-border-active > * {
+  -moz-background-clip: padding !important;
+  -webkit-background-clip: padding-box !important;
+  background-clip: padding-box !important;
+  overflow: hidden;
+}
+
+.component-border-placeholder:hover {
+  border: 2px solid transparent !important;
+  transform: scale(1, 1) translate3d(0, 0, 0);
+  overflow: hidden;
+}
+
+.component-border-active {
+  border: 2px solid #4285f4 !important;
+  transition: all 0.5s ease;
+  transform: scale(1, 1) translate3d(0, 0, 0);
+  z-index: 1000;
+}
+
+/* Component element */
+
+.component-element-preview,
+.component-element-active {
+  border: 2px solid transparent;
+}
+
+.component-element-active:hover,
+.component-element-edit {
+  border: 2px solid #00d9e1;
+}
+
+/* No select */
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Drop box */
+
+.drop-box {
+  height: 10px;
+}
+
+.drop-box-active {
+  height: 50px;
+  background-color: #ccc;
+}
+
+/* Component toolbar */
+
+.component-toolbar {
+  display: inline-block;
+}
+
+.component-toolbar > div > button {
+  background-color: #4285f4 !important;
+  border-color: #4285f4 !important;
+  border-bottom: 0 !important;
+  color: #fff !important;
+  margin-right: 0 !important;
+}
+
+.component-toolbar > div {
+  margin-right: 0 !important;
+}
+
+.component-toolbar > div > button:hover {
+  box-shadow: none;
+  opacity: 0.8;
+}
+
+.component-toolbar > div > .btn {
+  border-radius: 0 !important;
+  padding: 0.25em 1em !important;
+}
+
+.component-toolbar:hover {
+  cursor: pointer;
+}
+
+.component-toolbar-text {
+  font-family: 'Avenir Next Regular', sans-serif;
+  font-size: 11px;
+  background-color: #4285f4;
+  color: #fff;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Context menu */
+
+.context-menu-item:hover {
+  background-color: #4285f4 !important;
+}
+
+/* Text editor */
+
+app-builder-text-editor {
+  line-height: initial;
+  white-space: normal;
+}
+
+app-builder-text-editor ul,
+app-builder-text-editor ol {
+  margin-left: 10px;
+  margin-right: 0;
+  padding-left: 10px;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+app-builder-text-editor ul {
+  line-height: inherit !important;
+}
+
+app-builder-text-editor ul li {
+  line-height: inherit !important;
+}
+
+app-builder-text-editor > div > div > span {
+  font-size: inherit !important;
+}
+
+/* Section */
+
+.section-component {
+  overflow: hidden;
+}
+
+.section-item {
+  will-change: width, height, transform;
+  min-inline-size: min-content;
+  min-width: 30px;
+  min-height: 30px;
+}
+
+.hidden-item {
+  display: none;
+}
+
+.hide-overflow {
+  overflow: hidden;
+}
+
+.element-cords {
+  will-change: display, top, left, height, width;
+  border: '1px dashed #E95EFF';
+  position: 'absolute';
+  z-index: 10000;
+}
+
+/* Resize element */
+
+.resize-element-section-handlers {
+  z-index: 3;
+  overflow: visible;
+  min-inline-size: min-content;
+  min-width: 30px;
+  min-height: 30px;
+  will-change: width, height, transform;
+}
+
+.resize-crop-container-x,
+.resize-crop-container-x:hover {
+  height: calc(100% - 12px);
+  top: 6px;
+  display: flex;
+  pointer-events: all;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  cursor: ew-resize;
+  z-index: 500;
+  width: max(min(32px, 10%), 10px);
+}
+
+.resize-crop-handle-x {
+  width: 4px;
+  height: 16px;
+  content: '';
+  pointer-events: all;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 5px 1px rgba(14, 19, 24, 0.15), 0 0 0 1px rgba(14, 19, 24, 0.2);
+  position: relative;
+}
+
+.resize-crop-container-y,
+.resize-crop-container-y:hover {
+  width: calc(100% - 12px);
+  left: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  pointer-events: all;
+  cursor: ns-resize;
+  z-index: 500;
+  height: max(min(32px, 10%), 10px);
+}
+
+.resize-crop-handle-y {
+  width: 16px;
+  height: 4px;
+  content: '';
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 5px 1px rgba(14, 19, 24, 0.15), 0 0 0 1px rgba(14, 19, 24, 0.2);
+  position: relative;
+  pointer-events: all;
+}
+
+.resize-top-container-size {
+  top: min(max(-16px, -5%), -5px);
+}
+
+.resize-bottom-container-size {
+  bottom: min(max(-16px, -5%), -5px);
+}
+
+.resize-left-container-size {
+  left: min(max(-16px, -5%), -5px);
+}
+
+.resize-right-container-size {
+  right: min(max(-16px, -5%), -5px);
+}
+
+.resize-corner-crop-container {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  pointer-events: auto;
+  display: flex;
+}
+
+.resize-corner-crop-handle {
+  width: 12px;
+  height: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px 1px rgba(14, 19, 24, 0.15), 0 0 0 1px rgba(14, 19, 24, 0.2);
+  position: relative;
+  background: #fff;
+  display: flex;
+  margin: auto;
+  z-index: 501;
+}
+
+.resize-element-size-container {
+  width: max-content;
+  height: 20px;
+  background-color: #29303a;
+  color: white;
+  position: absolute;
+  border-radius: 3px;
+  pointer-events: none;
+  display: flex;
+  padding: 1px 3px;
+  font-size: 0.75rem;
+}
+
+.resize-corner-top-right {
+  z-index: 1000;
+  top: -15px;
+  right: -15px;
+  cursor: nesw-resize;
+}
+
+.resize-corner-top-left {
+  z-index: 1000;
+  top: -15px;
+  left: -15px;
+  cursor: nwse-resize;
+}
+
+.resize-corner-bottom-right {
+  z-index: 1000;
+  bottom: -15px;
+  right: -15px;
+  cursor: nwse-resize;
+}
+
+.resize-corner-bottom-left {
+  z-index: 1000;
+  bottom: -15px;
+  left: -15px;
+  cursor: nesw-resize;
+}

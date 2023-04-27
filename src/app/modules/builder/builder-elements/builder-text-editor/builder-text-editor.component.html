@@ -1,0 +1,7 @@
+<div
+  #editor
+  (input)="onInput($event.target['innerHTML'])"
+  [attr.contenteditable]="setContentEditable()"
+  [attr.data-cy]="'builder-text-editor'"
+  style="margin: auto; display: inline-block; min-width: 100%; cursor: auto;"
+></div>

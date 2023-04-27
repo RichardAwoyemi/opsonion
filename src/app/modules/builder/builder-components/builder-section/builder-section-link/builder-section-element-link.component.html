@@ -1,0 +1,6 @@
+<div
+  (click)="handleClick()"
+  [style]="{ cursor: element.link && element.link.type !== 'placeholder' ? 'pointer' : 'auto' }"
+>
+  <ng-content></ng-content>
+</div>

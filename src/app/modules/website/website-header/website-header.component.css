@@ -1,0 +1,25 @@
+.bg-light,
+.navbar-light {
+  background: #fafbfb !important;
+  border-bottom: solid 0.05em #ecf0f0 !important;
+}
+
+.website-name {
+  color: #757575 !important;
+  font-size: 1em;
+  float: right;
+  margin-left: 0.75em;
+  margin-top: 2px;
+}
+
+.website-name:hover {
+  cursor: pointer;
+}
+
+#builder-header-website-name {
+  text-transform: lowercase;
+}
+
+.navbar {
+  position: fixed !important;
+}

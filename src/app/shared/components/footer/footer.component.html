@@ -1,0 +1,21 @@
+<ng-container *ngIf="checkLoggedOutRoute() && checkIfIsOnDomain()">
+  <footer class="footer py-7" id="footer">
+    <div class="container">
+      <div class="row gap-y">
+        <div class="col-xl-12 text-center">
+          <div class="nav nav-center">
+            <a [attr.data-cy]="'press-link'" class="nav-link" routerLink="press">Press</a>
+            <a [attr.data-cy]="'legal-link'" class="nav-link" routerLink="legal">Legal</a>
+            <a [attr.data-cy]="'contact-link'" class="nav-link" href="mailto:hello@opsonion.com"
+              >Contact</a
+            >
+          </div>
+          <hr style="width: 15%;" />
+          <small class="opacity-70" id="copyrightMessage">
+            &copy; {{ today | date: 'yyyy' }} {{ copyrightMessage }}</small
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+</ng-container>

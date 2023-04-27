@@ -1,0 +1,28 @@
+<button
+  (click)="onButtonClick('justifyFull')"
+  *ngIf="activeAlignment === 'justifyFull'"
+  class="toolbar-text-command-justify-full-button toolbar-button"
+>
+  <img src="assets/img/align-justify.svg" style="height: 24px; width: 24px;" />
+</button>
+<button
+  (click)="onButtonClick('justifyLeft')"
+  *ngIf="activeAlignment === 'justifyLeft'"
+  class="toolbar-text-command-justify-left-button toolbar-button"
+>
+  <img src="assets/img/align-left.svg" style="height: 24px; width: 24px;" />
+</button>
+<button
+  (click)="onButtonClick('justifyCenter')"
+  *ngIf="activeAlignment === 'justifyCenter'"
+  class="toolbar-text-command-justify-center-button toolbar-button"
+>
+  <img src="assets/img/align-center.svg" style="height: 24px; width: 24px;" />
+</button>
+<button
+  (click)="onButtonClick('justifyRight')"
+  *ngIf="activeAlignment === 'justifyRight'"
+  class="toolbar-text-command-justify-right-button toolbar-button"
+>
+  <img src="assets/img/align-right.svg" style="height: 24px; width: 24px;" />
+</button>

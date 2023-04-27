@@ -1,0 +1,76 @@
+div.dropdown {
+  align-items: center;
+}
+
+button.inactive-font-name-button {
+  border-radius: 0.5rem;
+  background-color: inherit !important;
+  transition: background-color 0.3s ease-in, background-color 0.2s ease-out;
+}
+
+button.inactive-font-name-button:hover,
+.active-font-name-button {
+  border-radius: 0.5rem !important;
+  background-color: #edf0f2 !important;
+}
+
+div.dropdown-menu {
+  padding: 0 !important;
+  display: block;
+  position: absolute;
+  will-change: transform;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, 42px, 0);
+  text-decoration: none;
+  font-size: 0.8rem !important;
+  max-height: 50vh;
+  min-width: 6rem;
+  background-color: #fff;
+  background-clip: padding-box;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+div.dropdown-menu::-webkit-scrollbar-thumb {
+  background: #7e7e7e;
+}
+
+.dropdown-item {
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+.active-menu-option {
+  background-color: rgba(113, 147, 240, 0.15);
+}
+
+input {
+  background: inherit;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+  border: 0;
+}
+
+.font-name-button-display {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

@@ -1,0 +1,21 @@
+<app-builder-sidebar-wrapper
+  [activeSetting]="activeSetting"
+  [tabName]="TAB_NAME"
+  [tabClass]="tabClass"
+>
+  <app-builder-sidebar-search-input
+    [placeholderText]="'Search Text'"
+    [searchText]="searchText"
+    [tabName]="TAB_NAME"
+    (keydown)="onEnterKeyPressed($event)"
+    (onSearchTextChange)="setSearchText($event)"
+  ></app-builder-sidebar-search-input>
+  <app-builder-sidebar-text-list
+    [textItemListingInnerHeight]="textItemListingInnerHeight"
+    [textItems]="textItems"
+    [searchText]="searchText"
+    [textItemsLoaded]="textItemsLoaded"
+    [isActiveSearchTermPresent]="isActiveSearchTermPresent"
+    [activeComponentMetadata]="activeComponentMetadata"
+  ></app-builder-sidebar-text-list>
+</app-builder-sidebar-wrapper>

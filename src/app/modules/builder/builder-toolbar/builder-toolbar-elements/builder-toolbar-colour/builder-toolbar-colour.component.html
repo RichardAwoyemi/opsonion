@@ -1,0 +1,13 @@
+<ng-container *ngFor="let activeColour of activeColours; let i = index">
+  <button
+    class="toolbar-colour-button-container {{
+      activeColourIndex === i ? activeClass : inactiveClass
+    }}"
+    (click)="toggleColourSidebar(activeColour, i)"
+  >
+    <div
+      class="toolbar-colour-button-contents"
+      [style.background]="activeColour.colour"
+    ></div></button
+  >&nbsp;
+</ng-container>

@@ -1,0 +1,23 @@
+.card > div > span {
+  color: #0f0f0f;
+}
+
+.card:hover {
+  cursor: pointer !important;
+}
+
+.card:hover > div > span {
+  color: #2055ec;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-item:hover {
+  cursor: pointer !important;
+}
+
+.dropdown-menu {
+  min-width: 10px !important;
+}

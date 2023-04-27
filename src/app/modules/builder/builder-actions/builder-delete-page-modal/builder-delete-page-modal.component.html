@@ -1,0 +1,33 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">{{ activePage }}</h5>
+    <button
+      (click)="onCloseButtonClick()"
+      class="builder-modal page-delete-cross close"
+      type="button"
+    >
+      <span aria-hidden="true" class="builder-modal page-delete-cross">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    Are you sure you want to delete this page?
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onConfirmButtonClick()"
+      [attr.data-cy]="'page-delete-yes'"
+      class="builder-modal page-delete-yes btn btn-secondary"
+      type="button"
+    >
+      Yes</button
+    >&nbsp;
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'page-delete-no'"
+      class="builder-modal page-delete-no btn btn-secondary btn btn-secondary"
+      type="button"
+    >
+      No
+    </button>
+  </div>
+</div>

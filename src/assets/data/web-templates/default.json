@@ -1,0 +1,588 @@
+{
+  "id": "default",
+  "name": "Default",
+  "navbar": [
+    {
+      "key": "default",
+      "componentType": "section",
+      "style": { "background-color": "#ffffff" },
+      "height": 8.62,
+      "elements": [
+        {
+          "translate": { "x": 4.8, "y": 2.66 },
+          "width": 12.7,
+          "height": 3.31,
+          "type": "text",
+          "animation": null,
+          "layer": 1,
+          "mobileSettings": { "index": 1, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "<span style=\"color: rgb(229, 190, 23);\">OpsPlate</span><br>",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#323D47",
+                "font-size": "1.5vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 54.85, "y": 2.72 },
+          "height": 3.2,
+          "width": 5.54,
+          "type": "text",
+          "animation": null,
+          "layer": 1,
+          "mobileSettings": { "index": 2, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "<div style=\"text-align: center;\"><span style=\"color: rgb(78, 90, 90); background-color: rgba(0, 0, 0, 0);\">Home</span></div>",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.5vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)",
+                "background-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 86.64, "y": 2.19 },
+          "width": 11,
+          "height": 3.78,
+          "type": "button",
+          "animation": null,
+          "layer": 3,
+          "mobileSettings": { "index": 3, "style": {} },
+          "data": {
+            "button": {
+              "innerHtml": "LEARN MORE",
+              "link": "",
+              "style": {
+                "font-family": "Nunito",
+                "background-color": "#00857e",
+                "border-color": "#016da6",
+                "color": "#FFFFFF",
+                "font-size": "1vw",
+                "padding-top": "0px",
+                "padding-left": "0px",
+                "padding-right": "0px",
+                "padding-bottom": "0px",
+                "width": "100%",
+                "height": "100%"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 61.69, "y": 2.71 },
+          "height": 3.2,
+          "width": 7.11,
+          "type": "text",
+          "animation": null,
+          "layer": 3,
+          "mobileSettings": { "index": 2, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "<div style=\"text-align: center;\"><span style=\"color: rgb(78, 90, 90); background-color: rgba(0, 0, 0, 0);\">Product</span></div>",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.5vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)",
+                "background-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 69.81, "y": 2.72 },
+          "height": 3.18,
+          "width": 6.2,
+          "type": "text",
+          "animation": null,
+          "layer": 4,
+          "mobileSettings": { "index": 2, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "<div style=\"text-align: center;\"><span style=\"color: rgb(78, 90, 90);\">About</span></div>",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.5vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)",
+                "background-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 76.82, "y": 2.72 },
+          "height": 3.19,
+          "width": 7.65,
+          "type": "text",
+          "animation": null,
+          "layer": 5,
+          "mobileSettings": { "index": 2, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "<div style=\"text-align: center;\"><span style=\"color: rgb(78, 90, 90);\">Contact</span></div>",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.5vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)",
+                "background-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "hero": [
+    {
+      "key": "default",
+      "componentType": "section",
+      "style": { "background-color": "#ffffff" },
+      "height": 53.1,
+      "elements": [
+        {
+          "translate": { "x": -0.17, "y": 33.35 },
+          "type": "image",
+          "animation": null,
+          "layer": 0,
+          "mobileSettings": { "index": 5, "style": {} },
+          "data": {
+            "type": "image",
+            "image": {
+              "alt": "",
+              "style": { "height": "199px", "width": "1440px" },
+              "src": "https://i.imgur.com/We1Vx7o.png"
+            }
+          },
+          "height": 20,
+          "width": 100.34
+        },
+        {
+          "translate": { "x": 51.67, "y": 3.48 },
+          "height": 39.62,
+          "width": 40.64,
+          "type": "image",
+          "animation": null,
+          "layer": 1,
+          "mobileSettings": { "index": 0, "style": {} },
+          "data": {
+            "image": {
+              "src": "https://s3-eu-west-1.amazonaws.com/media.opsonion.com/library/icons8/taxi/order-complete-1.png",
+              "alt": "default-hero.svg",
+              "style": {}
+            }
+          }
+        },
+        {
+          "translate": { "x": 6.77, "y": 10.41 },
+          "width": 38,
+          "height": 14.2,
+          "type": "text",
+          "animation": null,
+          "layer": 2,
+          "mobileSettings": { "index": 1, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "Unleash your genius on Opsonion without writing a single line of code",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#323D47",
+                "font-size": "3vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 6.77, "y": 26.13 },
+          "height": 3.89,
+          "width": 38.4,
+          "type": "text",
+          "animation": null,
+          "layer": 3,
+          "mobileSettings": { "index": 2, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "Taking website design to the next level",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.25vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 6.77, "y": 31.9 },
+          "width": 12.16,
+          "height": 3.54,
+          "type": "button",
+          "animation": null,
+          "layer": 4,
+          "mobileSettings": { "index": 3, "style": {} },
+          "data": {
+            "button": {
+              "innerHtml": "LEARN MORE",
+              "link": "",
+              "style": {
+                "font-family": "Nunito",
+                "background-color": "rgba(0,0,0,0)",
+                "border-color": "#03857f",
+                "color": "#03857f",
+                "font-size": "1vw",
+                "padding-top": "0px",
+                "padding-left": "0px",
+                "padding-right": "0px",
+                "padding-bottom": "0px",
+                "width": "100%",
+                "height": "100%"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 6.77, "y": 7 },
+          "width": 14.91,
+          "height": 3.41,
+          "type": "text",
+          "animation": null,
+          "layer": 5,
+          "mobileSettings": { "index": 1, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "<span style=\"font-weight: 700;\">COMING SOON</span><br>",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#323D47",
+                "font-size": "1.3125vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "key": "original",
+      "height": 53.1,
+      "style": {
+        "background-color": "#ffffff"
+      },
+      "elements": [
+        {
+          "translate": {
+            "x": 50,
+            "y": 4.8
+          },
+          "height": 43,
+          "width": 45,
+          "type": "image",
+          "animation": null,
+          "layer": 0,
+          "mobileSettings": {
+            "index": 0,
+            "style": {}
+          },
+          "data": {
+            "image": {
+              "src": "https://s3-eu-west-1.amazonaws.com/media.opsonion.com/library/icons8/taxi/order-complete-1.png",
+              "alt": "default-hero.svg",
+              "style": {}
+            }
+          }
+        },
+        {
+          "translate": {
+            "x": 4.6,
+            "y": 12.7
+          },
+          "width": 38,
+          "height": 6.4,
+          "type": "text",
+          "animation": null,
+          "layer": 1,
+          "mobileSettings": {
+            "index": 1,
+            "style": {}
+          },
+          "data": {
+            "text": {
+              "innerHtml": "Unleash Your Genius",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#323D47",
+                "font-size": "2.5vw",
+                "border-style": "solid",
+                "border-color": "#ffffff"
+              }
+            }
+          }
+        },
+        {
+          "translate": {
+            "x": 4.6,
+            "y": 23.3
+          },
+          "height": 6.4,
+          "width": 38.4,
+          "type": "text",
+          "animation": null,
+          "layer": 2,
+          "mobileSettings": {
+            "index": 2,
+            "style": {}
+          },
+          "data": {
+            "text": {
+              "innerHtml": "Build a beautiful, modern website with flexible components built from scratch.",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.25vw",
+                "border-style": "solid",
+                "border-color": "#ffffff"
+              }
+            }
+          }
+        },
+        {
+          "translate": {
+            "x": 4.6,
+            "y": 33.9
+          },
+          "width": 12.7,
+          "height": 4.7,
+          "type": "button",
+          "animation": null,
+          "layer": 3,
+          "mobileSettings": {
+            "index": 3,
+            "style": {}
+          },
+          "data": {
+            "button": {
+              "innerHtml": "LEARN MORE",
+              "link": "",
+              "style": {
+                "font-family": "Nunito",
+                "background-color": "#2055EC",
+                "border-color": "#2055EC",
+                "color": "#FFFFFF",
+                "font-size": "0.75vw",
+                "padding-top": "0px",
+                "padding-left": "0px",
+                "padding-right": "0px",
+                "padding-bottom": "0px",
+                "width": "100%",
+                "height": "100%"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "key": "default",
+      "height": 24.87,
+      "componentType": "section",
+      "style": { "background-color": "#fafafa" },
+      "elements": [
+        {
+          "translate": { "x": 11.57, "y": 8.65 },
+          "height": 13.86,
+          "width": 15.19,
+          "type": "text",
+          "animation": null,
+          "layer": 0,
+          "mobileSettings": { "index": 2, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "Design amazing landing pages to capture the attention of potential customers. Create with ease and freedom!",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.25vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 11.57, "y": 4.89 },
+          "width": 15.19,
+          "height": 3.76,
+          "type": "text",
+          "animation": null,
+          "layer": 1,
+          "mobileSettings": { "index": 1, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "Landing Page",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#323D47",
+                "font-size": "2.25vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 5.59, "y": 3.79 },
+          "type": "image",
+          "animation": null,
+          "layer": 2,
+          "mobileSettings": { "index": 8, "style": {} },
+          "data": {
+            "type": "image",
+            "image": {
+              "alt": "",
+              "src": "https://i.imgur.com/LA0XMci.png"
+            }
+          },
+          "height": 5.2,
+          "width": 5.2
+        },
+        {
+          "translate": { "x": 39.1, "y": 3.45 },
+          "type": "image",
+          "animation": null,
+          "layer": 3,
+          "mobileSettings": { "index": 0, "style": {} },
+          "data": {
+            "type": "image",
+            "image": {
+              "alt": "",
+              "src": "https://i.imgur.com/iatkM6H.png"
+            }
+          },
+          "height": 5.2,
+          "width": 5.2
+        },
+        {
+          "translate": { "x": 45.02, "y": 4.51 },
+          "width": 15.19,
+          "height": 3.74,
+          "type": "text",
+          "animation": null,
+          "layer": 4,
+          "mobileSettings": { "index": 1, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "Links Page",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#323D47",
+                "font-size": "2.25vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 45.02, "y": 8.25 },
+          "height": 11.6,
+          "width": 15.19,
+          "type": "text",
+          "animation": null,
+          "layer": 5,
+          "mobileSettings": { "index": 2, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "Organise your links on a single website. Make it easy for anybody to find your content. Make it look great in the process.<br>",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.25vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 71.8, "y": 3.79 },
+          "type": "image",
+          "animation": null,
+          "layer": 6,
+          "mobileSettings": { "index": 6, "style": {} },
+          "data": {
+            "type": "image",
+            "image": {
+              "alt": "",
+              "src": "https://i.imgur.com/sNzPleM.png"
+            }
+          },
+          "height": 5.18,
+          "width": 5.18
+        },
+        {
+          "translate": { "x": 78.05, "y": 4.84 },
+          "width": 15.23,
+          "height": 3.85,
+          "type": "text",
+          "animation": null,
+          "layer": 7,
+          "mobileSettings": { "index": 1, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "Personal Page",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#323D47",
+                "font-size": "2.25vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        },
+        {
+          "translate": { "x": 78.05, "y": 8.65 },
+          "height": 11.82,
+          "width": 15.45,
+          "type": "text",
+          "animation": null,
+          "layer": 9,
+          "mobileSettings": { "index": 2, "style": {} },
+          "data": {
+            "text": {
+              "innerHtml": "Build a personal page to function as an online portolio or CV. Let people know what you do and what you're about.<br>",
+              "style": {
+                "font-family": "Nunito",
+                "color": "#757575",
+                "font-size": "1.25vw",
+                "border-style": "solid",
+                "border-color": "rgba(0,0,0,0)"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

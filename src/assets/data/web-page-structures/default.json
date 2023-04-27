@@ -1,0 +1,8 @@
+{
+  "pages": [
+    {
+      "name": "Home",
+      "components": ["Navbar", "Hero", "Features", "Hero"]
+    }
+  ]
+}

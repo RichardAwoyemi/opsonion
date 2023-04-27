@@ -1,0 +1,32 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">Publish website</h5>
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'modal-close'"
+      class="close"
+      type="button"
+    >
+      <span aria-hidden="true" class="builder-modal-publish-website-close">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    Are you sure you want to publish this website?
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onConfirmButtonClick()"
+      class="builder-modal-publish-website-yes btn btn-secondary"
+      type="button"
+    >
+      Yes</button
+    >&nbsp;
+    <button
+      (click)="onCloseButtonClick()"
+      class="builder-modal-publish-website-no btn btn-secondary btn btn-secondary"
+      type="button"
+    >
+      No
+    </button>
+  </div>
+</div>

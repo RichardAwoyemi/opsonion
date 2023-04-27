@@ -1,0 +1,14 @@
+.element-item-listing {
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.element-item-listing::-webkit-scrollbar {
+  width: 0.31rem;
+  padding: 0;
+}
+
+.element-item-listing::-webkit-scrollbar-thumb {
+  background: #60646b !important;
+}

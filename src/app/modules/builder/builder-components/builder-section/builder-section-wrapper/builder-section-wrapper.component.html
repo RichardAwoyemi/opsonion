@@ -1,0 +1,25 @@
+<app-builder-component-toolbar
+  *ngIf="!previewMode"
+  [componentId]="component?.componentId"
+  [componentName]="component?.componentType"
+  [activeComponentMetadata]="activeComponentMetadata"
+></app-builder-component-toolbar>
+<div
+  [attr.id]="component?.componentId"
+  [ngClass]="setContextMenu()"
+  [ngStyle]="outerStyle"
+  style="width: 100%;"
+>
+  <div
+    (mousedown)="onMouseDown()"
+    (dblclick)="clearActiveComponent()"
+    [attr.data-cy]="cyTag"
+    [ngClass]="setComponentClass()"
+    [class]="innerClass"
+    [ngStyle]="innerStyle"
+    style="width: 100%;"
+    tabindex="-1"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

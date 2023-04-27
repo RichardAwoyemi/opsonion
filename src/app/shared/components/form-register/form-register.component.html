@@ -1,0 +1,119 @@
+<style>
+  re-captcha {
+    display: inline-block;
+  }
+</style>
+<div class="row">
+  <form
+    #f="ngForm"
+    (ngSubmit)="f.form.valid && register()"
+    class="col-md-4 col-xl-4 mx-auto input-border"
+    name="registerForm"
+    novalidate
+  >
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          #firstName="ngModel"
+          [(ngModel)]="form.user.firstName"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="firstName"
+          placeholder="First Name"
+          required
+          type="text"
+        />
+      </label>
+      <small *ngIf="f.submitted && !firstName.valid" class="text-danger"
+        >First Name is required</small
+      >
+    </div>
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          #lastName="ngModel"
+          [(ngModel)]="form.user.lastName"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="lastName"
+          placeholder="Last Name"
+          required
+          type="text"
+        />
+      </label>
+      <small *ngIf="f.submitted && !lastName.valid" class="text-danger"
+        >Last Name is required</small
+      >
+    </div>
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          #email="ngModel"
+          [(ngModel)]="form.user.email"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="email"
+          placeholder="Email"
+          required
+          type="email"
+        />
+      </label>
+      <small *ngIf="f.submitted && !email.valid" class="text-danger">Email is required</small>
+    </div>
+    <div class="form-group">
+      <label style="width: 100%;">
+        <input
+          #password="ngModel"
+          [(ngModel)]="form.user.password"
+          autocomplete="off"
+          class="form-control form-input-background-image"
+          name="password"
+          placeholder="Password"
+          required
+          type="password"
+        />
+      </label>
+      <div *ngIf="f.submitted && !password.valid" class="text-danger" style="padding-bottom: 1em;">
+        <small>Password is required</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="checkbox" style="width: 100%;">
+        <input name="userAcceptedAgreement" type="hidden" value="0" />
+        <input
+          #userAcceptedAgreement="ngModel"
+          [(ngModel)]="form.userAcceptedAgreement"
+          id="userAcceptedAgreement"
+          name="userAcceptedAgreement"
+          required
+          type="checkbox"
+          value="1"
+        />&nbsp; I certify that I am 18 years of age or older, and I agree to the
+        <a routerLink="/legal" target="_blank">User Agreement and Privacy Policy</a>.
+      </label>
+      <div *ngIf="f.submitted && !userAcceptedAgreement.valid" style="padding-bottom: 1em;">
+        <small class="text-danger">Please accept the user agreement and privacy policy </small>
+      </div>
+    </div>
+    <div class="form-group d-flex justify-content-center" style="padding-bottom: 0;">
+      <re-captcha
+        #captcha="ngModel"
+        [(ngModel)]="form.captcha"
+        name="captcha"
+        required
+      ></re-captcha>
+    </div>
+    <div class="form-group">
+      <div *ngIf="f.submitted && !captcha.valid" style="padding-bottom: 1em; margin-top: -1em;">
+        <small class="text-danger">Please complete the CAPTCHA correctly</small>
+      </div>
+    </div>
+    <button class="btn btn-lg btn-block btn-primary" type="submit">
+      Create Account
+    </button>
+    <hr class="w-10" />
+    <app-social-login-button-group
+      [referredByUser]="referredByUser"
+    ></app-social-login-button-group>
+  </form>
+</div>

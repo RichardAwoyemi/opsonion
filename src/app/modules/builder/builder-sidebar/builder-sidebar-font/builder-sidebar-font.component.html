@@ -1,0 +1,106 @@
+<ng-container *ngIf="activeSetting == settingsName">
+  <div class="container-padding-vertical" style="background-color: #ffffff;">
+    <div class="container-padding-horizontal">
+      <div id="fonts" style="margin-top: -30px; margin-bottom: 2px;">&nbsp;</div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="ti-search"></i></span>
+        </div>
+        <label for="search-fonts"></label>
+        <input
+          (keyup)="search()"
+          [(ngModel)]="searchText"
+          [attr.data-cy]="'builder-sidebar-fonts-search'"
+          class="builder-sidebar-fonts-search form-control"
+          id="search-fonts"
+          placeholder="Search Fonts"
+          type="text"
+        />
+      </div>
+    </div>
+
+    <cdk-virtual-scroll-viewport itemSize="35" style="height: 90vh; display: grid !important;">
+      <div class="cdk-virtual-scroll-bottom-pad">
+        <ng-container *cdkVirtualFor="let font of filteredFontNames || fontNames; let i = index">
+          <ng-container *ngIf="!font['url'] && fontNames[i + 1]['url'] && font.header">
+            <ng-container
+              [ngTemplateOutletContext]="{ header: font.header }"
+              [ngTemplateOutlet]="fontSectionHeader"
+            >
+            </ng-container>
+          </ng-container>
+          <ng-container *ngIf="font.response">
+            <ng-container
+              [ngTemplateOutletContext]="{ response: font.response }"
+              [ngTemplateOutlet]="emptySearch"
+            >
+            </ng-container>
+          </ng-container>
+          <div [class]="setActiveClass(font['name'])">
+            <div class="padded">
+              <ng-container *ngIf="font['url']">
+                <ng-container
+                  [ngTemplateOutletContext]="{ font: font }"
+                  [ngTemplateOutlet]="fontOptionTemplate"
+                >
+                </ng-container>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</ng-container>
+
+<ng-template #fontOptionTemplate let-font="font">
+  <a
+    (click)="onFontNameChange($event, font['name'])"
+    [attr.data-cy]="
+      'builder-sidebar-menu-layout-select-' + (font['name'] | lowercase | replace: ' ':'-')
+    "
+    class="font-option row"
+  >
+    <img
+      [attr.alt]="font['name'] | lowercase | replace: ' ':'-'"
+      [attr.src]="font['url']"
+      class="font-name-image"
+    />
+    <div *ngIf="fontName == font['name']" style="float: right; height: 100%;">
+      <svg
+        class="active-option-tick"
+        fill="none"
+        height="1.2rem"
+        style="margin: 0.6rem 0;"
+        viewBox="0 0 25 25"
+        width="1.2rem"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20.5 6.5L9.5 17.5L4.5 12.5"
+          stroke="black"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </svg>
+    </div>
+  </a>
+</ng-template>
+
+<ng-template #fontSectionHeader let-header="header">
+  <hr class="font-sidebar-line-break" />
+  <div class="container-padding-horizontal">
+    <div class="padded">
+      <div class="font-section-header">{{ header }}</div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #emptySearch let-response="response">
+  <div class="container-padding-horizontal">
+    <div class="padded">
+      <div class="font-section-header">{{ response }}</div>
+    </div>
+  </div>
+</ng-template>

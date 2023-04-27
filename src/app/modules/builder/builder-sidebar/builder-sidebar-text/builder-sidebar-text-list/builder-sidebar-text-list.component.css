@@ -1,0 +1,40 @@
+.skeleton-text-items-container {
+  background-color: rgba(14, 19, 24, 0.25);
+  height: 60px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.text-item-listing {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.text-item-listing::-webkit-scrollbar {
+  width: 0.31rem;
+  padding: 0;
+}
+
+.text-item-listing::-webkit-scrollbar-thumb {
+  background: #60646b !important;
+}
+
+.text-item-container:hover {
+  background: hsla(0, 0%, 100%, 0.15);
+  cursor: pointer;
+}
+
+.text-item-container {
+  background: hsla(0, 0%, 100%, 0.07);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  padding: 16px;
+  display: flex;
+  width: 98%;
+  align-items: center;
+  z-index: 1;
+}
+
+.text-item {
+  transition: all 100ms;
+}

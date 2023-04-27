@@ -1,0 +1,49 @@
+<ng-container [ngSwitch]="element?.type">
+  <app-builder-text-block
+    *ngSwitchCase="'text'"
+    [componentMetadata]="componentMetadata"
+    [element]="element"
+    [style]="element?.data?.text.style"
+    [ngStyle]="{ height: '100%', display: 'block' }"
+    [text]="element?.data?.text?.innerHtml"
+    [contenteditable]="
+      componentActive &&
+      activeComponentMetadata?.activeElementId === element.elementId &&
+      isContentEditable
+    "
+  >
+  </app-builder-text-block>
+  <app-builder-button
+    *ngSwitchCase="'button'"
+    class=""
+    [element]="element"
+    [componentMetadata]="componentMetadata"
+    [text]="element?.data?.button?.innerHtml"
+    [websiteMode]="websiteMode"
+    [buttonLink]="element?.data?.button?.link"
+    [ngStyle]="{ display: 'block' }"
+    [style]="element?.data?.button.style"
+    [contenteditable]="
+      componentActive &&
+      activeComponentMetadata?.activeElementId === element.elementId &&
+      isContentEditable
+    "
+  ></app-builder-button>
+  <app-builder-image
+    *ngSwitchCase="'image'"
+    [componentMetadata]="componentMetadata"
+    [containerStyle]="{ width: '100%', height: '100%' }"
+    [imageStyle]="{
+      width: '100%',
+      height: '100%',
+      'object-fit': 'cover',
+      'min-width': '30px',
+      'min-height': '30px'
+    }"
+    [elementName]="'image'"
+    [elementId]="element?.elementId"
+    [src]="element?.data?.image?.src"
+    [alt]="element?.data?.image?.alt"
+  >
+  </app-builder-image>
+</ng-container>

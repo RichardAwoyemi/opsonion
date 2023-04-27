@@ -1,0 +1,83 @@
+<ng-container *ngIf="activeSetting == settingsName">
+  <div class="container-padding-vertical">
+    <div
+      class="RS-Rfw"
+      style="user-select: none; -webkit-tap-highlight-color: transparent; pointer-events: all;"
+    >
+      <div class="sidebar-colour-section">
+        <div
+          class="LNeUZQ"
+          style="
+            justify-content: space-between;
+            display: flex;
+            flex: 1 0;
+            color: rgba(14, 19, 24, 0.45);
+            margin: 8px 8px 4px;
+          "
+        >
+          <span class="sidebar-colour-header-contents">New color</span>
+        </div>
+        <div class="container-fluid" style="margin-bottom: 1rem;">
+          <div class="col-2">
+            <button
+              *ngFor="let width of innerWidth"
+              class="toolbar-colour-sidebar-colour-button"
+              type="button"
+              [value]="activeColour"
+              [cpAlphaChannel]="'disabled'"
+              [cpOutputFormat]="'hex'"
+              [(colorPicker)]="activeColour"
+              [cpWidth]="width"
+              (colorPickerChange)="setColour($event)"
+            >
+              <span
+                class="toolbar-colour-sidebar-colour-button-contents"
+                style="
+                  background-image: url(assets/img/toolbar-colours-image.png);
+                  background-size: cover;
+                "
+              ></span>
+            </button>
+          </div>
+          <div class="col-2">
+            <button
+              *ngFor="let width of innerWidth"
+              class="toolbar-colour-sidebar-colour-button"
+              type="button"
+              (click)="setColour('rgba(0,0,0,0)')"
+            >
+              <span
+                class="toolbar-colour-sidebar-colour-button-contents"
+                style="background-image: url(assets/img/remove-colour.svg); background-size: cover;"
+              ></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-colour-section">
+        <div class="sidebar-colour-header-container">
+          <span class="sidebar-colour-header-contents">Default Colors</span>
+        </div>
+        <div class="container-fluid">
+          <ng-container *ngFor="let colour of defaultColours">
+            <div *ngTemplateOutlet="toolbarColour; context: { colour: colour }"></div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template let-colour="colour" #toolbarColour>
+  <div class="col-2">
+    <button class="toolbar-colour-sidebar-colour-button" type="button" (click)="setColour(colour)">
+      <span
+        class="toolbar-colour-sidebar-colour-button-contents"
+        [ngClass]="colour === activeColour ? ACTIVE_BUTTON : ''"
+        [style.background]="colour"
+        [style.border]="'darken(' + colour + ',20%)'"
+      ></span>
+    </button>
+  </div>
+</ng-template>

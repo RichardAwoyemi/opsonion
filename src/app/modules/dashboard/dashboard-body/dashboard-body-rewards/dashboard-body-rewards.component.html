@@ -1,0 +1,74 @@
+<div id="rewards"></div>
+<div [ngStyle]="rewardsBodyPadding">
+  <h3 *ngIf="!isMobile">Rewards</h3>
+  <div [ngStyle]="rewardsTopPadding" class="row">
+    <div class="col-md-8">
+      <p class="lead">Share your referral link with friends</p>
+      <p class="text-justify">
+        When a friend joins Opsonion and creates a new website using your referral link, you'll both
+        earn
+        <strong>1</strong> Opsonion Credit. You can redeem your Opsonion Credits for premium images,
+        templates and components.
+      </p>
+      <div class="form-group input-group" style="margin-top: 2em;">
+        <label for="referralLink"></label>
+        <input
+          class="form-control"
+          id="referralLink"
+          readonly
+          type="text"
+          value="{{ referralUrl }}"
+        />
+        <div class="input-group-append">
+          <button (click)="copyMessage()" class="btn btn-primary" type="button">
+            Copy Link
+          </button>
+        </div>
+      </div>
+      <div class="small mt-3 opacity-70">or share with:</div>
+      <div style="padding-top: 1em;">
+        <a class="share-popup" href="{{ facebookShareUrl }}" target="_blank">
+          <img
+            alt="facebook-icon"
+            class="social-media-icon"
+            src="../../../../../assets/img/facebook.png"
+          />
+        </a>
+        &nbsp;
+        <a href="{{ whatsappShareUrl }}" target="_blank">
+          <img
+            alt="whatsapp-icon"
+            class="social-media-icon"
+            src="../../../../../assets/img/whatsapp.png"
+          />
+        </a>
+        &nbsp;
+        <a href="{{ twitterShareUrl }}" target="_blank">
+          <img
+            alt="twitter-icon"
+            class="social-media-icon"
+            src="../../../../../assets/img/twitter.png"
+          />
+        </a>
+        &nbsp;
+        <a href="{{ emailShareUrl }}">
+          <img
+            alt="mail-icon"
+            class="social-media-icon"
+            src="../../../../../assets/img/email.png"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <hr />
+      <p *ngIf="credits === 0">You currently have no Opsonion Credits.</p>
+      <p *ngIf="credits === 1">
+        You currently have <strong>{{ credits }}</strong> Opsonion Credit.
+      </p>
+      <p *ngIf="credits > 1">
+        You currently have <strong>{{ credits }}</strong> Opsonion Credit.
+      </p>
+    </div>
+  </div>
+</div>

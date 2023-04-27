@@ -1,0 +1,26 @@
+<app-builder-sidebar-wrapper
+  [activeSetting]="activeSetting"
+  [tabName]="TAB_NAME"
+  [tabClass]="tabClass"
+>
+  <app-builder-sidebar-search-input
+    [placeholderText]="'Search Elements'"
+    [searchText]="searchText"
+    [tabName]="TAB_NAME"
+    (onSearchTextChange)="onSearchTextChange($event);"
+  ></app-builder-sidebar-search-input>
+  <div class="element-item-listing" [ngStyle]="{ height: elementListingInnerHeight + 'px' }">
+    <app-builder-sidebar-elements-list
+      *ngIf="searchText"
+      [elementsSearchResult]="elementsSearchResult"
+      [activeComponentMetadata]="activeComponentMetadata"
+    ></app-builder-sidebar-elements-list>
+    <app-builder-sidebar-elements-groups
+      *ngIf="!searchText"
+      [elementImageLibrary]="elementImageLibrary"
+      [elementButtonLibrary]="elementButtonLibrary"
+      [activeComponentMetadata]="activeComponentMetadata"
+      (onSearchTextChange)="onSearchTextChange($event)"
+    ></app-builder-sidebar-elements-groups>
+  </div>
+</app-builder-sidebar-wrapper>

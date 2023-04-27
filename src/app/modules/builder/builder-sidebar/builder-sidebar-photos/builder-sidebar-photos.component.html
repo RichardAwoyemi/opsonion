@@ -1,0 +1,51 @@
+<app-builder-sidebar-wrapper
+  [activeSetting]="activeSetting"
+  [tabName]="TAB_NAME"
+  [tabClass]="tabClass"
+>
+  <app-builder-sidebar-search-input
+    [placeholderText]="'Search Photos'"
+    [searchText]="searchText"
+    [tabName]="TAB_NAME"
+    (keyup.enter)="searchImages()"
+    (onSearchTextChange)="setEmittedSearchText($event)"
+    id="builder-sidebar-photo-search"
+  ></app-builder-sidebar-search-input>
+  <div class="photos-categories-container">
+    <app-carousel
+      [carouselItemId]="'categories'"
+      [carouselItemParentComponent]="'builder-sidebar-photo-categories'"
+      id="builder-sidebar-photo-categories"
+      [carouselItemButtonHeight]="CAROUSEL_ITEM_BUTTON_HEIGHT"
+      [carouselItemButtonLeftPosition]="carouselItemButtonLeftPosition"
+      [carouselItemButtonRightPosition]="carouselItemButtonRightPosition"
+      [carouselLoopOption]="true"
+      [carouselNavOption]="true"
+      [@fadeIn]
+      *ngIf="photoCategoriesLoaded && photoCategories; else skeletonPhotoCategoriesContainer"
+    >
+      <div
+        class="item photo-category-button"
+        id="builder-sidebar-photo-category-item-{{ i }}"
+        [attr.data-cy]="'builder-sidebar-photo-category-item-' + i"
+        *ngFor="let photoCategory of photoCategories; let i = index"
+        (click)="setInputtedSearchText(photoCategory.title)"
+      >
+        <app-builder-sidebar-photos-categories
+          [photoCategory]="photoCategory"
+          [photoCategoryIndex]="i"
+        ></app-builder-sidebar-photos-categories>
+      </div>
+    </app-carousel>
+    <app-builder-sidebar-photos-list
+      [photos]="photos"
+      [activeComponentMetadata]="activeComponentMetadata"
+      [photosLoaded]="photosLoaded"
+      [photosListingInnerHeight]="photosListingInnerHeight"
+      (onScrollDown)="onScrollDown()"
+    ></app-builder-sidebar-photos-list>
+  </div>
+  <ng-template #skeletonPhotoCategoriesContainer>
+    <app-builder-sidebar-skeleton-photos-categories></app-builder-sidebar-skeleton-photos-categories>
+  </ng-template>
+</app-builder-sidebar-wrapper>

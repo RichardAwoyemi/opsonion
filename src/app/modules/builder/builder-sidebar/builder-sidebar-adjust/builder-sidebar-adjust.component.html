@@ -1,0 +1,12 @@
+<ng-container *ngIf="componentSliders">
+  <div class="sidebar-adjust-header">
+    <p class="sidebar-adjust-header-text" [innerText]="'Adjustment'"></p>
+  </div>
+  <div class="sidebar-adjust-outer-container">
+    <div style="width: 100%" class="sidebar-adjust-horizontal-padding settings-table">
+      <app-sidebar-slider-settings-element class="settings-row" *ngFor="let componentSettings of componentSliders['settings']"
+        style="display: table-row; width: 100%; height: 2.5rem" [data]="componentSliders['data']" [settings]="componentSettings">
+      </app-sidebar-slider-settings-element>
+    </div>
+  </div>
+</ng-container>

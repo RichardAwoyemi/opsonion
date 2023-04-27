@@ -1,0 +1,17 @@
+<div class="photo-category-button-container">
+  <div
+    class="photo-category-button-image"
+    [style.background-image]="'url(' + photoCategory.image.src + ')'"
+  ></div>
+  <div
+    class="photo-category-button-text-container"
+    [attr.data-cy]="'photo-category-button-text-container-' + photoCategoryIndex"
+  >
+    <div
+      class="photo-category-button-text"
+      [attr.data-cy]="'photo-category-button-text-' + photoCategoryIndex"
+    >
+      {{ photoCategory.title | lowercase }}
+    </div>
+  </div>
+</div>

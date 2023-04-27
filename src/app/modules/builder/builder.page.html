@@ -1,0 +1,78 @@
+<div *ngIf="innerWidth >= MIN_BUILDER_WIDTH" class="row builder-page-container">
+  <div *ngIf="!previewMode" class="col-row-12">
+    <app-builder-header
+      [websiteName]="websiteName"
+      [blacklistTerms]="blacklistTerms"
+      [renameWebsiteModalStatus]="renameWebsiteModalStatus"
+      [websiteLoaded]="websiteLoaded"
+      [user]="user"
+    ></app-builder-header>
+  </div>
+  <div *ngIf="!previewMode" class="builder-page-sidebar-container" [style]="sidebarStyle">
+    <app-builder-sidebar
+      [innerHeight]="innerHeight"
+      [activeSetting]="activeSetting"
+      [activePageIndex]="activePageIndex"
+      [activeDragData]="activeDragData"
+      [unsplashPhotos]="unsplashPhotos"
+      [photoCategories]="photoCategories"
+      [unsplashPhotosLoaded]="unsplashPhotosLoaded"
+      [photoCategoriesLoaded]="photoCategoriesLoaded"
+      [activeComponentMetadata]="activeComponentMetadata"
+      [activeToolbarElement]="activeToolbarElement"
+      [activeToolbarColourSetting]="activeToolbarColourSetting"
+      [website]="website"
+      [activeFontName]="activeFontName"
+      [textItems]="textItems"
+      [imageLibrary]="imageLibrary"
+      [buttonLibrary]="buttonLibrary"
+    ></app-builder-sidebar>
+    <app-builder-sidebar-toggle [activeSetting]="activeSetting"></app-builder-sidebar-toggle>
+  </div>
+  <div class="builder-page-showcase-container">
+    <app-builder-showcase
+      [activeOrientation]="activeOrientation"
+      [innerHeight]="innerHeight"
+      [showcaseHeight]="showcaseHeight"
+      [iframeHolderHeight]="iframeHolderHeight"
+      [iframeHeight]="iframeHeight"
+      [fontUrl]="fontUrl"
+      [previewButtonIcon]="previewButtonIcon"
+      [fullScreenButtonIcon]="fullScreenButtonIcon"
+      [activePage]="activePage"
+      [activePageIndex]="activePageIndex"
+      [previewMode]="previewMode"
+      [fullScreenMode]="fullScreenMode"
+      [websiteLoaded]="websiteLoaded"
+      [website]="website"
+      [activeComponentMetadata]="activeComponentMetadata"
+      [activeToolbarElement]="activeToolbarElement"
+      [activeSetting]="activeSetting"
+      [activeFontName]="activeFontName"
+    ></app-builder-showcase>
+  </div>
+</div>
+<div
+  *ngIf="innerWidth < MIN_BUILDER_WIDTH"
+  [ngStyle]="{'height': this.innerHeight + 'px'}"
+  class="d-flex justify-content-center align-items-center"
+>
+  <div class="builder-page-error-container">
+    <div class="col-md-12 text-center">
+      <img alt="blank" src="../../../assets/img/logo.svg" />
+    </div>
+    <div class="col-md-12 text-center">
+      <div class="builder-page-error-message-container">
+        <span [attr.data-cy]="'builder-page-error-message'"
+          >You need a minimum resolution of 1024x768 in order to use our platform.<br />Please
+          adjust your display settings and try again.</span
+        >
+        <div class="builder-page-error-button">
+          <button (click)="redirect()" class="btn btn-secondary" type="button">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

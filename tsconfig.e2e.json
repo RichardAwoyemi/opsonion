@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "lib": ["es2015", "dom"],
+    "types": ["cypress"]
+  },
+  "include": ["./cypress/**/*.js", "./cypress/**/*.d.ts"]
+}

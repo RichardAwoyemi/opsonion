@@ -1,0 +1,28 @@
+<div class="elements-group-container">
+  <div class="row">
+    <div class="col-8">
+      <span class="elements-group-title">{{ elementsGroupTitle }}</span>
+      <span class="elements-group-item-count">({{ elementsGroupItemsCount }})</span>
+    </div>
+    <div class="col-4 text-right" (click)="emitSearchTextChange(elementsGroupTitle)">See All</div>
+  </div>
+  <div class="elements-group-list">
+    <div class="row">
+      <div
+        class="col-6 align-self-center"
+        (click)="addElement(elementItem)"
+        (dragstart)="onDragStart($event, elementItem)"
+        (drag)="onDrag($event, elementItem)"
+        (dragend)="onDragEnd($event, elementItem)"
+        *ngFor="
+          let elementItem of elementsGroupItems
+            | slice: elementsGroupPreviewLowerBand:elementsGroupPreviewUpperBand;
+          trackBy: trackByIdx;
+          let i = index
+        "
+      >
+        <img class="elements-group-image" [attr.alt]="elementItem.alt" [attr.src]="elementItem.src" />
+      </div>
+    </div>
+  </div>
+</div>

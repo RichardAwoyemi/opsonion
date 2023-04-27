@@ -1,0 +1,41 @@
+<div [ngClass]="toolbarClass">
+  <div style="justify-content: space-between; display: flex;">
+    <div *ngIf="previewMode" style="margin: auto 0;">
+      <button
+        (click)="togglePreview()"
+        [attr.data-cy]="'toolbar-preview-exit-button'"
+        class="btn btn-secondary toolbar-preview-exit-button"
+      >
+        Exit Preview</button
+      >&nbsp;
+    </div>
+    <div style="margin: auto 0;">
+      <div *ngIf="activeToolbarElements && activeToolbarElements?.left && !previewMode">
+        <ng-container *ngFor="let element of activeToolbarElements?.left">
+          <app-toolbar-element
+            [toolbarElementItem]="element"
+            [activeComponentMetadata]="activeComponentMetadata"
+            [activeToolbarElement]="activeToolbarElement"
+            [website]="website"
+            [activeFontName]="activeFontName"
+            [activeSetting]="activeSetting"
+          ></app-toolbar-element>
+        </ng-container>
+      </div>
+    </div>
+    <div
+      *ngIf="activeToolbarElements && activeToolbarElements?.right"
+      class="text-right"
+      style="display: flex; margin: auto 0;"
+    >
+      <ng-container *ngFor="let element of activeToolbarElements.right">
+        <app-toolbar-element
+          [toolbarElementItem]="element"
+          [activeComponentMetadata]="activeComponentMetadata"
+          [activeToolbarElement]="activeToolbarElement"
+          [website]="website"
+        ></app-toolbar-element>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<button
+  (click)="copyElement()"
+  [attr.data-cy]="'toolbar-' + (settings.displayText | lowercase) + '-button'"
+  [class]="BUTTON_CLASS"
+>
+  <img style="height: 24px;" src="assets/img/toolbar-copy-icon.svg" /></button
+>&nbsp;

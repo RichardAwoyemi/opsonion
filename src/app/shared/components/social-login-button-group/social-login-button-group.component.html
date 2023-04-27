@@ -1,0 +1,33 @@
+<button
+  (click)="googleSignIn()"
+  *ngIf="!(isMobile | async)?.matches && !referredByUser"
+  class="btn btn-lg btn-block btn-google"
+  type="button"
+>
+  Continue with Google
+</button>
+<button
+  (click)="mobileGoogleSignIn()"
+  *ngIf="(isMobile | async)?.matches && !referredByUser"
+  class="btn btn-lg btn-block btn-google"
+  type="button"
+>
+  Continue with Google
+</button>
+
+<button
+  (click)="facebookSignIn()"
+  *ngIf="!(isMobile | async)?.matches && !referredByUser"
+  class="btn btn-lg btn-block btn-facebook"
+  type="button"
+>
+  Continue with Facebook
+</button>
+<button
+  (click)="mobileFacebookSignIn()"
+  *ngIf="(isMobile | async)?.matches && !referredByUser"
+  class="btn btn-lg btn-block btn-facebook"
+  type="button"
+>
+  Continue with Facebook
+</button>

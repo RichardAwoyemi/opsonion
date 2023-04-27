@@ -1,0 +1,50 @@
+<!--suppress HtmlUnknownTag -->
+<button
+  (click)="toggleFontNameSidebar()"
+  [attr.data-cy]="'builder-toolbar-font-name'"
+  [class]="buttonClass"
+  id="dropdownMenuButton"
+  style="
+    min-width: 0;
+    max-width: 100%;
+    display: inline-flex;
+    border-color: transparent;
+    align-items: center;
+    padding: 0.35rem 0.45rem;
+    font-size: 1rem;
+    text-align-last: justify;
+  "
+  type="button"
+>
+  <span
+    style="
+      vertical-align: middle;
+      width: 7rem;
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+    "
+  >
+    <a
+      [attr.data-cy]="'builder-toolbar-' + selectorName + '-font-name'"
+      [innerText]="fontName"
+      class="font-name-button-display"
+    ></a>
+    <svg
+      fill="none"
+      height="1rem"
+      style="float: right; align-self: center;"
+      viewBox="0 0 25 24"
+      width="1rem"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.5 9L12.5 15L18.5 9"
+        stroke="black"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+  </span>
+</button>&nbsp;

@@ -1,0 +1,88 @@
+<div class="form-group">
+  <label>Street Address 1 <span class="text-danger">*</span></label>
+  <div class="row">
+    <div class="col-md-12">
+      <label style="width: 100%;">
+        <input
+          (blur)="checkStreetAddress1Input()"
+          (change)="checkStreetAddress1Input()"
+          [(ngModel)]="streetAddress1"
+          class="form-control"
+          name="streetAddress1"
+          placeholder="Street Address"
+          type="text"
+        />
+      </label>
+      <div *ngIf="showStreetAddressInputError['status'] && !streetAddress1">
+        <small class="text-danger">Street Address is required </small>
+      </div>
+      <div *ngIf="streetAddress1 && streetAddress1.length < 6">
+        <small class="text-danger">Street Address needs to be greater than 5 characters </small>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label>Street Address 2</label>
+  <div class="row">
+    <div class="col-md-12">
+      <label style="width: 100%;">
+        <input
+          (blur)="checkStreetAddress2Input()"
+          (change)="checkStreetAddress2Input()"
+          [(ngModel)]="streetAddress2"
+          class="form-control"
+          name="streetAddress2"
+          placeholder="Street Address"
+          type="text"
+        />
+      </label>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label>City <span class="text-danger">*</span></label>
+  <div class="row">
+    <div class="col-md-12">
+      <label style="width: 100%;">
+        <input
+          (blur)="checkCityInput()"
+          (change)="checkCityInput()"
+          [(ngModel)]="city"
+          class="form-control"
+          name="city"
+          placeholder="City"
+          type="text"
+        />
+      </label>
+    </div>
+    <div class="col-md-12">
+      <div *ngIf="showCityInputError['status'] && !city">
+        <small class="text-danger">City is required </small>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <label>Postal Code <span class="text-danger">*</span></label>
+  <div class="row">
+    <div class="col-md-6">
+      <label style="width: 100%;">
+        <input
+          (blur)="checkPostcodeInput()"
+          (change)="checkPostcodeInput()"
+          [(ngModel)]="postcode"
+          class="form-control"
+          name="postcode"
+          placeholder="Postal Code"
+          type="text"
+        />
+      </label>
+    </div>
+    <div class="col-md-12">
+      <div *ngIf="showPostcodeInputError['status'] && !postcode">
+        <small class="text-danger">Postal Code is required </small>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div
+  *ngIf="displayOption"
+  [attr.data-cy]="cyContainerTag"
+  [ngStyle]="containerStyle"
+  id="{{ componentMetadata.component.componentId + '-' + elementName }}"
+  tabindex="-1"
+>
+  <div
+    tabindex="-1"
+    [ngStyle]="imageStyle"
+    [style.background-image]="'url(' + src + ')'"
+    style="background-size: cover; background-repeat: no-repeat;"
+    [attr.data-cy]="cyImageTag"
+  ></div>
+</div>

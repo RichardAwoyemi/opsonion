@@ -1,0 +1,36 @@
+.btn {
+  padding-left: 0.75em !important;
+  padding-right: 0.75em !important;
+  padding-bottom: 1em !important;
+  background-color: transparent !important;
+}
+
+.btn-icon {
+  color: rgba(14, 19, 24, 0.45);
+}
+
+.btn-icon-active {
+  color: #000;
+}
+
+:host ::ng-deep .popover-body {
+  font-size: 0.85em !important;
+}
+
+.desktop {
+  width: 100%;
+  margin-left: 0;
+  transition: width 1s;
+}
+
+.tablet {
+  width: 70%;
+  margin-left: 0;
+  transition: width 1s;
+}
+
+.mobile {
+  width: 35%;
+  margin-left: 0;
+  transition: width 1s;
+}

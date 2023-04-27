@@ -1,0 +1,57 @@
+<!-- resizer -->
+<div
+  class="resize-element-section-handlers component-element-edit"
+  [style]="{
+    position: collapseLayout ? 'relative' : 'absolute',
+    transform: collapseLayout
+      ? ''
+      : 'translate3d(' +
+        activeElement?.translate?.x +
+        'vw, ' +
+        activeElement?.translate?.y +
+        'vw, 0)',
+    width: collapseLayout ? '100%' : activeElement?.width + 'vw',
+    height: activeElement?.height + 'vw',
+    'pointer-events': 'none',
+    'will-change': 'transform',
+    display: 'block'
+  }"
+>
+  <!-- resizer - corner -->
+  <div
+    *ngFor="let settings of cornerDragSettings; let i = index"
+    [draggable]="true"
+    (dragstart)="$event.stopPropagation(); startResizeElement($event, settings.position); $event.preventDefault()"
+    (drag)="$event.preventDefault()"
+    (mousemove)="resizeElement($event)"
+    class="{{ settings.class }}"
+  >
+    <div class="resize-corner-crop-handle">
+      <div
+        *ngIf="i === 3 && active"
+        class="resize-element-size-container"
+        [ngStyle]="{
+          transform:
+            activeElement.translate.x + activeElement.width < 90
+              ? 'translate(3vw, 1vh)'
+              : 'translate(-75px, 1.5vh)'
+        }"
+      >
+        w: {{ (activeElement?.width / 100) * showcaseDimensions | number: '1.0-0' }} h:
+        {{ (activeElement?.height / 100) * showcaseDimensions | number: '1.0-0' }}
+      </div>
+    </div>
+  </div>
+
+  <!-- resizer - sides -->
+  <div
+    *ngFor="let settings of sideDragSettings"
+    [draggable]="true"
+    (dragstart)="$event.stopPropagation(); startResizeElement($event, settings.position); $event.preventDefault()"
+    (drag)="$event.preventDefault()"
+    (mousemove)="resizeElement($event)"
+    class="{{ settings.outerClass }}"
+  >
+    <div class="{{ settings.innerClass }}"></div>
+  </div>
+</div>

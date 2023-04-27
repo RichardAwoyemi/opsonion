@@ -1,0 +1,124 @@
+<div *ngIf="user && dates" class="form-group">
+  <label>Date of Birth <span class="text-danger">*</span></label>
+  <div class="row">
+    <div class="col-md-6">
+      <label style="width: 100%;">
+        <select
+          (change)="onChangeUpdateDob()"
+          [(ngModel)]="dobMonth"
+          class="form-control"
+          name="dobMonth"
+        >
+          <option disabled>Month</option>
+          <option *ngFor="let date of dates" [ngValue]="date['name']">{{ date['name'] }}</option>
+        </select>
+      </label>
+    </div>
+    <div class="col-md-3">
+      <label style="width: 100%;">
+        <select
+          (change)="onChangeUpdateDob()"
+          [(ngModel)]="dobDay"
+          class="form-control"
+          name="dobDay"
+        >
+          <option disabled>Day</option>
+          <ng-container *ngIf="dobMonth == 'January'">
+            <option *ngFor="let date of counter(dates[0]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'February'">
+            <option *ngFor="let date of counter(dates[1]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'March'">
+            <option *ngFor="let date of counter(dates[2]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'April'">
+            <option *ngFor="let date of counter(dates[3]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'May'">
+            <option *ngFor="let date of counter(dates[4]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'June'">
+            <option *ngFor="let date of counter(dates[5]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'July'">
+            <option *ngFor="let date of counter(dates[6]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'August'">
+            <option *ngFor="let date of counter(dates[7]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'September'">
+            <option *ngFor="let date of counter(dates[8]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'October'">
+            <option *ngFor="let date of counter(dates[9]['days']); let i = index" [ngValue]="i + 1">
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'November'">
+            <option
+              *ngFor="let date of counter(dates[10]['days']); let i = index"
+              [ngValue]="i + 1"
+            >
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+          <ng-container *ngIf="dobMonth == 'December'">
+            <option
+              *ngFor="let date of counter(dates[11]['days']); let i = index"
+              [ngValue]="i + 1"
+            >
+              {{ i + 1 }}</option
+            >
+          </ng-container>
+        </select>
+      </label>
+    </div>
+    <div class="col-md-3">
+      <label style="width: 100%;">
+        <select
+          (change)="onChangeUpdateDob()"
+          [(ngModel)]="dobYear"
+          class="form-control"
+          name="dobYear"
+        >
+          <option disabled>Year</option>
+          <option *ngFor="let year of years" [ngValue]="year">{{ year }}</option>
+        </select>
+      </label>
+    </div>
+    <div class="col-md-12">
+      <div *ngIf="showDobMonthInputError['status']">
+        <small class="text-danger">Month is required </small>
+        <br />
+      </div>
+
+      <div *ngIf="showDobDayInputError['status']">
+        <small class="text-danger">Day is required </small>
+        <br />
+      </div>
+
+      <div *ngIf="showDobYearInputError['status']">
+        <small class="text-danger">Year is required </small>
+      </div>
+    </div>
+  </div>
+</div>

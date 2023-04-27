@@ -1,0 +1,150 @@
+<button
+  (click)="toggleLinkMenu()"
+  [attr.data-cy]="'toolbar-' + (settings.displayText | lowercase) + '-button'"
+  [class]="BUTTON_CLASS"
+>
+  <img style="height: 24px;" src="assets/img/toolbar-link-icon.svg" /></button
+>&nbsp;
+
+<div *ngIf="showMenu" class="toolbar-link-menu-placement-container">
+  <div class="toolbar-link-menu-container-borders">
+    <div style="padding: 16px; max-height: 60vh; overflow-y: visible;">
+      <div class="btn-group" role="group" aria-label="Basic example" style="display: flex;">
+        <button
+          (click)="selectTab(setting)"
+          *ngFor="let setting of tabSettings"
+          type="button"
+          class="btn btn-secondary"
+          [ngClass]="activeTab.name === setting.name ? 'active' : ''"
+        >
+          <img src="{{ setting.icon }}" style="max-width: 1rem;" />
+        </button>
+      </div>
+      <div class="toolbar-link-menu-subheading-outer-container">
+        <div style="justify-content: space-between; display: flex;">
+          <span
+            class="toolbar-link-menu-subheading"
+            [innerText]="activeTab.name"
+            style="display: flex; text-align: left;"
+          ></span>
+          <span style="align-items: center; display: flex;"
+            ><input
+              class="toolbar-link-new-page-checkbox"
+              style="margin-right: 5px;"
+              type="checkbox"
+              id="toolbar-link-new-page-checkbox"
+              (change)="toggleNewPage()" />
+            <div [innerText]="'Open New Tab'"></div
+          ></span>
+        </div>
+
+        <ng-container *ngIf="activeTab.name === 'Url'">
+          <div class="url-tab">
+            <label class="url-label" style="width: 100%;"
+              ><div class="url-input-container" tabindex="-1">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+                </div>
+                <input
+                  (keyup)="setUrl(linkSettings?.url)"
+                  class="url-input"
+                  type="text"
+                  placeholder="Enter link"
+                  aria-describedby="basic-addon3"
+                  [(ngModel)]="linkSettings.url"
+                />
+              </div>
+              <p class="url-label-text">You can link to external websites.</p></label
+            >
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="activeTab.name === 'Page'">
+          <div class="page-tab">
+            <label class="url-label" style="width: 100%;">
+              <div class="dropdown" style="text-align: left;">
+                <button
+                  class="btn btn-secondary dropdown-toggle page-dropdown-button"
+                  type="button"
+                  id="toolobarLinksPageDropdown"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  [innerText]="linkSettings?.page || 'Select Page'"
+                ></button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="toolobarLinksPageDropdown"
+                  style="right: 0px;"
+                >
+                  <a
+                    *ngFor="let page of pages"
+                    class="dropdown-item"
+                    [innerText]="page"
+                    (click)="selectDropdownOption($event); $event.stopPropagation()"
+                  ></a>
+                </div>
+              </div>
+              <p class="url-label-text">You can link to internal pages.</p></label
+            >
+          </div>
+        </ng-container>
+
+        <ng-container *ngIf="activeTab.name === 'Page Section'">
+          <div class="page-tab">
+            <label class="url-label" style="width: 100%;">
+              <div class="dropdown" style="text-align: left;">
+                <button
+                  class="btn btn-secondary dropdown-toggle page-dropdown-button"
+                  type="button"
+                  id="toolobarLinksPageDropdown"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  [innerText]="'Select Page'"
+                ></button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="toolobarLinksPageDropdown"
+                  style="right: 0px;"
+                >
+                  <a
+                    *ngFor="let page of pages"
+                    class="dropdown-item"
+                    [innerText]="page"
+                    (click)="selectDropdownOption($event); $event.stopPropagation()"
+                  ></a>
+                </div>
+              </div>
+
+              <div class="dropdown" style="text-align: left; padding-top: 10px;">
+                <button
+                  class="btn btn-secondary dropdown-toggle page-dropdown-button"
+                  type="button"
+                  id="toolobarLinksPageDropdown"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  [innerText]="'Select Page Section'"
+                ></button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="toolobarLinksPageDropdown"
+                  style="right: 0px;"
+                >
+                  <a
+                    *ngFor="let page of pages"
+                    class="dropdown-item"
+                    [innerText]="page"
+                    (click)="selectDropdownOption($event); $event.stopPropagation()"
+                  ></a>
+                </div>
+              </div>
+              <p class="url-label-text">You can link to internal pages.</p></label
+            >
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

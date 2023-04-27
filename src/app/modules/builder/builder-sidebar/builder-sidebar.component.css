@@ -1,0 +1,83 @@
+.bg-dark {
+  background-color: #0e1318 !important;
+}
+
+.sidebar-menu-tab-icons {
+  -webkit-box-flex: 1;
+  flex-shrink: 2;
+  flex-grow: 1;
+  min-width: max-content;
+  max-width: 100%;
+  z-index: 100;
+  position: relative;
+  background-color: rgb(14, 19, 24);
+  width: 5rem;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: #5f646b;
+}
+
+.sidebar-tab-scroll::-webkit-scrollbar {
+  width: 0.25rem;
+  background: #29303a;
+}
+
+.sidebar-tab-scroll::-webkit-scrollbar-thumb {
+  background: #29303a;
+}
+
+.sidebar-tab-scroll:hover::-webkit-scrollbar-thumb {
+  background: #5f646b;
+}
+
+.font-tab-scroll::-webkit-scrollbar {
+  background: #fff !important;
+}
+
+.font-tab-scroll::-webkit-scrollbar-thumb {
+  background: #fff !important;
+}
+
+.font-tab-scroll:hover::-webkit-scrollbar-thumb {
+  background: #5f646b !important;
+}
+
+.sidebar-menu-tab-content {
+  -webkit-box-flex: 0;
+  flex: 2 1 65%;
+  max-width: 100%;
+  background-color: #29303a;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.toolbar-sidebar-menu-tab-content {
+  -webkit-box-flex: 0;
+  flex: 2 1 65%;
+  max-width: 100%;
+  background-color: #fff;
+  border-right: 1px solid #dbdcdd;
+}
+
+.toolbar-tab-content {
+  height: inherit;
+  overflow: hidden;
+}
+
+.tab-content {
+  height: inherit;
+  margin-right: -0.3rem;
+}
+
+.bd-content {
+  -ms-flex-order: 1;
+  order: 1;
+}
+
+.bd-example {
+  padding: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+  border-width: 0.2rem;
+}

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "dev": "opsonion-dev",
+    "live": "opsonion-live"
+  }
+}

@@ -1,0 +1,311 @@
+ul.sidebar-photos-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 -0.2rem;
+}
+
+li {
+  height: 6rem;
+  min-height: 4rem;
+  flex-grow: 1;
+  list-style: none;
+  display: inline-block;
+  position: relative;
+}
+
+img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+  z-index: 2;
+  position: relative;
+  margin: 0;
+  border: 0;
+  padding: 0.2rem;
+}
+
+img.loaded:hover {
+  cursor: grab;
+}
+
+img.loaded:active img.loaded {
+  cursor: grabbing;
+}
+
+.default-upload-text {
+  color: #e9ecf0;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.btn-file input[type='file'] {
+  position: absolute;
+  top: -1000px;
+}
+
+.btn {
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  color: white;
+  opacity: 1;
+  -webkit-animation: overlaychange 5s 1 ease forwards;
+  animation: overlaychange 5s 1 ease forwards;
+  z-index: 12;
+}
+
+.drag-event-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#loading {
+  border: 0.2rem transparent;
+  height: 1rem;
+  padding: 0.2rem 0.4rem;
+  bottom: 0.2rem;
+  position: absolute;
+  width: 100%;
+  z-index: 4;
+}
+
+#loading #bar {
+  position: relative;
+  margin: 0.2rem;
+  height: 0.5rem;
+  background: white;
+  border-radius: 1rem;
+  width: 5%;
+  -webkit-animation: loadingbar 5s ease forwards;
+  animation: loadingbar 5s ease forwards;
+}
+
+@keyframes overlaychange {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes overlaychange {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes loadingbar {
+  0% {
+    width: 5%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+@-webkit-keyframes loadingbar {
+  0% {
+    width: 5%;
+  }
+
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes shrink-bounce {
+  0% {
+    transform: scale(1);
+  }
+
+  33% {
+    transform: scale(0.85);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes checkbox-check {
+  0% {
+    width: 0;
+    height: 0;
+    border-color: #212121;
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+
+  33% {
+    width: 0.2em;
+    height: 0;
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+
+  100% {
+    width: 0.2em;
+    height: 0.5em;
+    border-color: #212121;
+    transform: translate3d(0, -0.5em, 0) rotate(45deg);
+  }
+}
+
+.selected-overlay {
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 10;
+}
+
+div.checkbox-container {
+  position: absolute;
+  top: 0;
+  right: 1.45rem;
+  height: 0;
+  z-index: 6;
+  margin: 0.2rem;
+  opacity: 0;
+}
+
+div.inactive-checkbox {
+  opacity: 0;
+}
+
+div.active-checkbox {
+  opacity: 1;
+}
+
+div.checkbox-container:hover,
+li.image-container > img:hover + div.checkbox-container {
+  opacity: 1;
+}
+
+input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+input[type='checkbox'] + label {
+  position: absolute;
+  display: flex;
+  margin: 0.6em 0;
+  color: #eee;
+  -webkit-transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+input[type='checkbox'] + label > span {
+  border: 0.03rem solid #757575;
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  background: #eee;
+  z-index: 6;
+  border-radius: 0.15rem;
+  cursor: pointer;
+  -webkit-transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+input[type='checkbox'] + label:hover,
+input[type='checkbox']:focus + label {
+  color: #eee;
+}
+
+input[type='checkbox'] + label:hover > span,
+input[type='checkbox']:focus + label > span {
+  background: rgba(255, 255, 255, 1);
+}
+
+input[type='checkbox']:checked + label > span {
+  border: 0.03rem solid #757575;
+  animation: shrink-bounce 200ms cubic-bezier(0.4, 0, 0.23, 1);
+}
+
+input[type='checkbox']:checked + label > span::before {
+  content: '';
+  position: absolute;
+  font-size: 1rem;
+  top: 0.57rem;
+  left: 0.25rem;
+  border-right: 0.1rem solid transparent;
+  border-bottom: 0.1rem solid transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
+  animation: checkbox-check 125ms 250ms cubic-bezier(0.4, 0, 0.23, 1) forwards;
+}
+
+.selected-image-menu {
+  position: absolute;
+  background-color: rgb(14, 19, 24);
+  right: 0;
+  bottom: 0;
+  left: 4rem;
+  z-index: 12;
+  overflow: hidden;
+  height: 4rem;
+  color: white;
+  display: inline-flex;
+  padding: 1.5rem;
+}
+
+.selected-image-menu > .content-container {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selected-image-menu > .content-container:first-of-type {
+  justify-content: flex-start;
+}
+
+.selected-image-menu > .content-container:last-of-type {
+  justify-content: flex-end;
+}
+
+.selected-image-menu > .content-container .icon-button {
+  margin: 0.3rem;
+  border-radius: 0.4rem;
+}
+
+.selected-image-menu > .content-container .icon-button svg {
+  margin: 0.3rem;
+}
+
+.selected-image-menu > .content-container .icon-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}

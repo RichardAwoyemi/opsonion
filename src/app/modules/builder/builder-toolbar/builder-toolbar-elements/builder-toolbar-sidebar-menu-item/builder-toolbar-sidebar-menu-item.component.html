@@ -1,0 +1,7 @@
+<button
+  (click)="setActiveEditSetting()"
+  [attr.data-cy]="'toolbar-' + (settings.displayText | lowercase) + '-button'"
+  [ngClass]="setFormatButtonClass()"
+>
+  {{ settings.displayText }}
+</button>&nbsp;

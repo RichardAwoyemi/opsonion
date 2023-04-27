@@ -1,0 +1,19 @@
+<button
+  (click)="selectButton()"
+  (dblclick)="selectButton()"
+  *ngIf="displayOption"
+  [attr.data-cy]="cyButtonTag"
+  [ngStyle]="style"
+  style="text-transform: unset; height: inherit; display: block; box-sizing: inherit;"
+  id="{{ element.elementId + '-container' }}"
+>
+  <app-builder-text-editor
+    [(value)]="text"
+    (valueChange)="setText($event)"
+    [attr.data-cy]="cyTextEditorTag"
+    [contenteditable]="contenteditable"
+    tabindex="-1"
+    style="height: inherit; display: flex;"
+  >
+  </app-builder-text-editor>
+</button>

@@ -1,0 +1,43 @@
+<section class="section text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-xl-9 mx-auto input-border">
+        <div *ngIf="(isMobile | async)?.matches" class="pt-3"></div>
+        <div *ngIf="authService.user as user">
+          <h3 class="fw-200 text-center">Thank you for registering.</h3>
+          <hr class="w-10" />
+          <p class="text-center">
+            We have sent a confirmation email to <strong>{{user.email}}</strong>.
+          </p>
+          <p class="text-center">Please click on the link in that email to verify your account.</p>
+          <p class="text-center">
+            If you do not receive this email, please check your spam or bulk email folder.
+          </p>
+          <br />
+          <div class="col-md-4 col-xl-4 mx-auto input-border">
+            <button
+              (click)="authService.sendVerificationMail()"
+              class="btn btn-lg btn-block btn-secondary"
+            >
+              Resend Email
+            </button>
+          </div>
+        </div>
+        <div *ngIf="!authService.user as user">
+          <h3 class="fw-200 text-center">Oops.</h3>
+          <hr class="w-10" />
+          <p class="text-center">Nothing to see here!</p>
+          <br />
+          <div class="col-md-4 col-xl-4 mx-auto input-border">
+            <button [routerLink]="['/login']" class="btn btn-lg btn-block btn-secondary">
+              Login
+            </button>
+            <button [routerLink]="['/register']" class="btn btn-lg btn-block btn-secondary">
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<ng-container *ngIf="user.firstName && user.lastName">
+  <div class="col-md-12">
+    <div (click)="setActiveSidebar(ACTIVE_SIDEBAR_SETTINGS)" class="sidebar-profile-button">
+      <div class="col-md-12">
+        <div class="row">
+          <div *ngIf="!hideImageProfilePicture && user.photoURL != null" class="col-md-3">
+            <img
+              (error)="handleImageError()"
+              [src]="user.photoURL"
+              alt="user"
+              class="rounded-circle"
+            />
+          </div>
+          <div *ngIf="hideImageProfilePicture || user.photoURL == null" class="col-md-3">
+            <img [src]="photoURL" alt="user" class="rounded-circle" />
+          </div>
+          <div class="col-md-9">
+            <div style="font-size: 14px; padding-right: 0; margin-top: -5px; color: #0e1318;">
+              {{ user.firstName + ' ' + user.lastName }}
+            </div>
+            <div style="font-size: 12px; color: rgba(14, 19, 24, 0.3);">
+              Free
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12" style="padding-top: 2em;">
+    <button
+      (click)="openCreateWebsiteModal()"
+      [attr.data-cy]="'dashboard-create-website-button'"
+      class="btn btn-xl btn-block btn-primary"
+      type="button"
+    >
+      Create Website
+    </button>
+  </div>
+  <div class="col-md-12">
+    <hr />
+  </div>
+</ng-container>
+<ng-container *ngIf="!user.firstName && !user.lastName">
+  <div [ngStyle]="{ width: dashboardSidebarWidth + 'px' }" class="col-md-12">
+    <img
+      (click)="setActiveSidebar(ACTIVE_SIDEBAR_SETTINGS)"
+      alt="logo-white"
+      class="logo-sidebar"
+      src="../../../../../assets/img/opsonion-cropped-grey.png"
+      style="width: 75%; opacity: 0.5;"
+    />
+  </div>
+  <div class="col-md-12">
+    <hr />
+  </div>
+</ng-container>

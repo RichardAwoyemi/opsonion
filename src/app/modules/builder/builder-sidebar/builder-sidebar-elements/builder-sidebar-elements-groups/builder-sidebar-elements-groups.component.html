@@ -1,0 +1,11 @@
+<div *ngIf="elementImageLibrary && elementButtonLibrary">
+  <app-builder-sidebar-elements-group
+    *ngFor="let elementCategory of ELEMENT_CATEGORIES"
+    [activeComponentMetadata]="activeComponentMetadata"
+    [elementsGroupTitle]="elementCategory"
+    [elementsGroupItems]="getElementGroupItems(elementCategory)"
+    [elementsGroupItemsCount]="getElementGroupItemsCount(elementCategory)"
+    (onSearchTextChange)="emitSearchTextChange($event)"
+  ></app-builder-sidebar-elements-group>
+</div>
+

@@ -1,0 +1,54 @@
+<ng-container *ngIf="activeSetting == settingsName">
+  <div class="sidebar-animate-container">
+    <div class="sidebar-animate-full-contents-container">
+      <div class="sidebar-animate-header"><p class="sidebar-animate-header-text">Animation</p></div>
+
+      <div class="btn-pref btn-group btn-group-justified btn-group-lg">
+        <div *ngFor="let tabPane of tabPanes" class="btn-group btn-container" role="group">
+          <button
+            (click)="setTab(tabPane.toLowerCase())"
+            type="button"
+            [ngClass]="activeTab === tabPane.toLowerCase() ? 'active-button btn' : 'btn'"
+            style="padding: 8px 0;"
+          >
+            <div class="hidden-xs">{{ tabPane }}</div>
+          </button>
+        </div>
+      </div>
+
+      <div *ngFor="let tabContent of ['entrance', 'default', 'hover']">
+        <div class="row" style="margin: 0;" *ngIf="activeTab === tabContent">
+          <div
+            *ngTemplateOutlet="
+              animationList;
+              context: {
+                animations: tabContent === 'entrance' ? entranceAnimations : otherAnimations,
+                tab: activeTab
+              }
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-template let-animations="animations" let-tab="tab" #animationList>
+  <div class="col-md-6 sidebar-animate-button-container">
+    <button class="sidebar-animate-button" type="button" (click)="setAnimateClass(null, tab)">
+      <span class="sidebar-animate-button-contents">
+        <span class="sidebar-animate-button-text" [innerText]="'None'"></span
+      ></span>
+    </button>
+  </div>
+  <div *ngFor="let animation of animations" class="col-md-6 sidebar-animate-button-container">
+    <button class="sidebar-animate-button" type="button" (click)="setAnimateClass(animation.class, tab)">
+      <span class="sidebar-animate-button-contents">
+        <img
+          class="sidebar-animate-button-icon {{ animation?.class }}"
+          src="assets/img/sidebar-animate-icons.svg" />
+        <span class="sidebar-animate-button-text" [innerText]="animation.name"></span
+      ></span>
+    </button>
+  </div>
+</ng-template>

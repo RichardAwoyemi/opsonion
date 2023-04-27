@@ -1,0 +1,50 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 [attr.data-cy]="'modal-title'" class="modal-title">{{ activePage }}</h5>
+    <button
+      (click)="onCloseButtonClick()"
+      class="builder-modal page-rename-cross close"
+      type="button"
+    >
+      <span aria-hidden="true" class="builder-modal page-rename-cross">&times;</span>
+    </button>
+  </div>
+  <div [attr.data-cy]="'modal-body'" class="modal-body">
+    <div *ngIf="displayError" class="alert alert-danger" role="alert">
+      A page with this name already exists.
+    </div>
+    Please enter a name for your page.
+    <div class="form-group">
+      <label for="pageName"></label>
+      <input
+        (change)="pageName = pageName.trim(); displayError = false"
+        (keyup)="validatePageName()"
+        [(ngModel)]="pageName"
+        [attr.data-cy]="'page-rename-input'"
+        blockNonAlphabetCharacters
+        class="form-control"
+        id="pageName"
+        type="text"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      (click)="onConfirmButtonClick()"
+      [attr.data-cy]="'page-rename-save'"
+      [disabled]="disableSaveButton"
+      class="builder-modal page-rename-save btn btn-secondary"
+      type="button"
+    >
+      Save</button
+    >&nbsp;
+    <button
+      (click)="onCloseButtonClick()"
+      [attr.data-cy]="'page-rename-cancel'"
+      class="builder-modal page-rename-cancel btn btn-secondary"
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

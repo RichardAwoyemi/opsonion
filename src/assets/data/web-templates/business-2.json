@@ -1,0 +1,375 @@
+{
+  "id": "business-2",
+  "name": "Front",
+  "navbar": {
+    "style": {
+      "navbarStyle": {
+        "background-color": "#FFFFFF",
+        "display": "flex",
+        "font-family": "Poppins",
+        "padding": "2em"
+      },
+      "navbarLinkStyle": {
+        "color": "rgb(119, 131, 143)",
+        "padding-bottom": "24px",
+        "padding-left": "14px",
+        "padding-right": "14px",
+        "padding-top": "24px",
+        "font-size": "1rem",
+        "font-weight": "400",
+        "line-height": "24px",
+        "font-family": "Poppins",
+        "display": "block"
+      },
+      "navbarLogoImageStyle": {
+        "height": "55px",
+        "padding-top": "4px",
+        "padding-left": "4px",
+        "padding-right": "4px",
+        "padding-bottom": "4px",
+        "width": "100px"
+      },
+      "navbarBrandStyle": {
+        "color": "#377DFF",
+        "margin-right": "1rem",
+        "font-size": "1.25rem",
+        "line-height": "inherit",
+        "white-space": "nowrap",
+        "padding-top": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "padding-bottom": "0px",
+        "font-family": "Poppins",
+        "width": "100px"
+      }
+    },
+    "details": {
+      "navbarLogoText": "Logo",
+      "navbarLayoutClass": "navbar-nav ml-auto",
+      "navbarLogoImage": {
+        "src": "https://s3-eu-west-1.amazonaws.com/media.opsonion.com/templates/default-logo.svg",
+        "alt": "Navbar Logo Image"
+      }
+    }
+  },
+  "heading": {
+    "style": {
+      "headingTitleStyle": {
+        "font-family": "Poppins",
+        "font-size": "3rem",
+        "font-weight": "bolder",
+        "color": "#000",
+        "padding-left": "10px",
+        "padding-bottom": "0px",
+        "padding-top": "0px",
+        "padding-right": "10px"
+      },
+      "headingSubtitleStyle": {
+        "font-family": "Poppins",
+        "font-size": "1.25rem",
+        "color": "#757575",
+        "padding-left": "10px",
+        "padding-bottom": "0px",
+        "padding-top": "0px",
+        "padding-right": "10px"
+      },
+      "headingButtonStyle": {
+        "font-family": "Poppins",
+        "background-color": "#2055EC",
+        "border-color": "#2055EC",
+        "color": "#FFFFFF",
+        "font-size": "0.75rem",
+        "padding-top": "10px",
+        "padding-left": "20px",
+        "padding-right": "20px",
+        "padding-bottom": "10px"
+      },
+      "headingStyle": {
+        "background-color": "#FFFFFF",
+        "padding-left": "10px",
+        "padding-bottom": "75px",
+        "padding-top": "75px",
+        "padding-right": "10px",
+        "opacity": "100%"
+      },
+      "headingBackgroundColorStyle": {
+        "background-color": "#FFFFFF",
+        "padding-left": "0px",
+        "padding-bottom": "0px",
+        "padding-top": "0px",
+        "padding-right": "0px"
+      },
+      "headingBackgroundStyle": {
+        "background-size": "cover",
+        "background-attachment": "fixed",
+        "background-image": null
+      }
+    },
+    "details": {
+      "headingTitleText": "Awesome Stuff",
+      "headingSubtitleText": "Reading this means you must really want to know more about our secret sauce!",
+      "headingButtonText": "Learn More",
+      "headingSubtitleCondition": true,
+      "headingButtonCondition": true,
+      "headingContainerClass": "text-center",
+      "headingButtonLink": "Home",
+      "headingBackgroundImage": {
+        "src": null,
+        "alt": null
+      }
+    }
+  },
+  "hero": {
+    "style": {
+      "heroBackgroundStyle": {
+        "color": "#FFFFFF",
+        "margin-bottom": "0",
+        "padding-left": "2rem",
+        "padding-bottom": "2rem",
+        "padding-top": "2rem",
+        "padding-right": "2rem"
+      },
+      "heroHeadingStyle": {
+        "font-family": "Poppins",
+        "color": "#1e2022",
+        "font-weight": "300",
+        "line-height": "1.2",
+        "font-size": "3.5rem",
+        "padding-top": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "padding-bottom": "0px",
+        "margin-bottom": "5px"
+      },
+      "heroSubheadingStyle": {
+        "font-family": "Poppins",
+        "color": "#757575",
+        "line-height": "34px",
+        "font-weight": "300",
+        "font-size": "1.25rem",
+        "padding-top": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "padding-bottom": "0px",
+        "text-align": "center!important",
+        "display": "inline-block",
+        "width": "inherit"
+      },
+      "heroImageStyle": {
+        "width": "100%",
+        "src": "https://s3-eu-west-1.amazonaws.com/media.opsonion.com/templates/business-2-hero.svg",
+        "alt": "business-2-hero.svg",
+        "padding-top": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "padding-bottom": "0px"
+      },
+      "heroButtonStyle": {
+        "color": "#377dff",
+        "font-family": "Poppins",
+        "min-width": "9.6875rem",
+        "background-color": "rgba(55, 125, 255, 0.1)",
+        "border-color": "transparent",
+        "text-transform": "none",
+        "text-align": "center",
+        "font-size": "1rem",
+        "font-weight": "500",
+        "border-radius": "0.3125rem",
+        "padding-top": "10px",
+        "padding-left": "20px",
+        "padding-right": "20px",
+        "padding-bottom": "10px"
+      }
+    },
+    "details": {
+      "heroComponentLayout": 0,
+      "heroHeadingText": "Unleash your genius",
+      "heroSubheadingText": "Build a beautiful, modern website with flexible components built from scratch.",
+      "heroButtonText": "LEARN MORE",
+      "heroButtonLink": "About"
+    }
+  },
+  "footer": {
+    "style": {
+      "footerStyle": {
+        "padding-top": "16px",
+        "padding-left": "16px",
+        "padding-right": "16px",
+        "padding-bottom": "16px",
+        "display": "block",
+        "background-color": "#FFFFFF",
+        "color": "#8c98a4"
+      },
+      "footerSocialLinksContainerStyle": {
+        "margin-bottom": "-10px",
+        "margin-top": "0px",
+        "padding-top": "4px",
+        "padding-left": "8px",
+        "padding-right": "8px"
+      },
+      "footerSocialLinksStyle": {
+        "font-family": "Poppins",
+        "font-size": "0.875rem",
+        "margin-right": "0.25em",
+        "margin-left": "0.25em",
+        "margin-bottom": "4px",
+        "margin-top": "0px",
+        "padding-left": "0px",
+        "padding-bottom": "0px",
+        "padding-top": "0px",
+        "padding-right": "0px"
+      },
+      "footerPageLinksStyle": {
+        "font-family": "Poppins",
+        "font-size": "0.875rem",
+        "padding-left": "8px",
+        "padding-bottom": "4px",
+        "padding-top": "4px",
+        "padding-right": "8px"
+      },
+      "footerCopyrightStyle": {
+        "font-family": "Poppins",
+        "padding-top": "8px",
+        "padding-left": "8px",
+        "padding-right": "8px",
+        "padding-bottom": "8px",
+        "font-size": "0.875rem"
+      }
+    },
+    "details": {
+      "footerAlignmentClass": "text-center",
+      "footerComponentLayout": 0,
+      "footerSocialLinks": {
+        "facebookUrl": null,
+        "twitterUrl": null,
+        "instagramUrl": null,
+        "youtubeUrl": null,
+        "githubUrl": null,
+        "linkedinUrl": null
+      },
+      "footerMenuOptions": [
+        {
+          "page": "Home",
+          "visible": false
+        },
+        {
+          "page": "About",
+          "visible": true
+        }
+      ]
+    }
+  },
+  "features": {
+    "style": {
+      "featuresHeadingStyle": {
+        "font-family": "Poppins",
+        "font-size": "1.25rem",
+        "font-weight": "bold",
+        "color": "#000",
+        "padding-left": "10px",
+        "padding-bottom": "5px",
+        "margin-bottom": "5px",
+        "padding-top": "0px",
+        "padding-right": "10px"
+      },
+      "featuresSubheadingStyle": {
+        "font-family": "Poppins",
+        "font-size": "0.8125rem",
+        "color": "#757575",
+        "padding-left": "10px",
+        "padding-bottom": "0px",
+        "padding-top": "0px",
+        "padding-right": "10px"
+      },
+      "featuresStyle": {
+        "background-color": "#FFFFFF",
+        "padding-left": "10px",
+        "padding-bottom": "14px",
+        "padding-top": "14px",
+        "padding-right": "10px"
+      }
+    },
+    "details": {
+      "featuresWidth": "33.3%"
+    }
+  },
+  "teamCards": {
+    "style": {
+      "teamCardsNameStyle": {
+        "font-family": "Poppins",
+        "margin-top": "0",
+        "margin-bottom": "16px",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "min-width": "80%",
+        "width": "fit-content",
+        "font-size": "1.5rem",
+        "font-weight": "bold",
+        "color": "#313435"
+      },
+      "teamCardsJobTitleStyle": {
+        "margin-top": "0",
+        "margin-bottom": "16px",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "min-width": "80%",
+        "width": "fit-content",
+        "font-size": "0.875rem",
+        "font-family": "Poppins",
+        "color": "#6f808a"
+      },
+      "teamCardsTitleStyle": {
+        "font-family": "Poppins",
+        "margin-top": "0",
+        "margin-bottom": "68px",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "min-width": "80%",
+        "width": "fit-content",
+        "color": "#000000",
+        "font-size": "3.5rem",
+        "font-weight": "bold",
+        "text-align": "center"
+      },
+      "teamCardsGridContainerStyle": {
+        "display": "flex",
+        "-webkit-box-orient": "horizontal",
+        "-webkit-box-direction": "normal",
+        "flex-direction": "row",
+        "flex-wrap": "wrap",
+        "background-color": "#ffffff"
+      },
+      "teamCardsGridStyle": {
+        "box-shadow": "#e2e9ed 0 0 0 0.0675rem",
+        "overflow": "hidden",
+        "position": "relative",
+        "background-color": "#ffffff",
+        "padding": "1.125rem",
+        "box-sizing": "border-box"
+      },
+      "teamCardsImageStyle": {
+        "display": "block",
+        "object-fit": "cover",
+        "width": "6.125rem",
+        "height": "6.125rem",
+        "border-radius": "100%",
+        "margin-top": "0",
+        "margin-bottom": "20px",
+        "margin-left": "auto",
+        "margin-right": "auto",
+        "flex": "1 1 0"
+      },
+      "teamCardsContainerStyle": {
+        "max-width": "100%",
+        "padding-left": "32px",
+        "padding-bottom": "16px",
+        "padding-top": "16px",
+        "padding-right": "32px"
+      }
+    },
+    "details": {
+      "teamCardsTitleText": "The Team",
+      "teamCardsPerRow": 3
+    }
+  }
+}

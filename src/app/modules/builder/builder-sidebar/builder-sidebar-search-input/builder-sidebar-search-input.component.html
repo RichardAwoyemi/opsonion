@@ -1,0 +1,20 @@
+<div class="form-group input-group search-input">
+  <div class="input-group-prepend">
+    <span class="input-group-text"><i class="ti-search"></i></span>
+  </div>
+  <label for="search-text"></label>
+  <input
+    [(ngModel)]="searchText"
+    [attr.data-cy]="'builder-sidebar-search-input'"
+    [attr.placeholder]="placeholderText"
+    (keydown)="trimSearchInputValue()"
+    (keyup)="emitSearchInputValue()"
+    autocomplete="off"
+    class="builder-sidebar-text-search form-control"
+    id="search-text"
+    type="text"
+  />
+  <div class="input-group-append" *ngIf="searchText" (click)="clearSearchInputValue()">
+    <span class="input-group-text reset-search-text-button"><i class="ti-close"></i></span>
+  </div>
+</div>

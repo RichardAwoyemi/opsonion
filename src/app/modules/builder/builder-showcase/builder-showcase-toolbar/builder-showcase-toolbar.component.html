@@ -1,0 +1,188 @@
+<div class="no-select" style="display: flex; justify-content: center;">
+  <div [ngClass]="activeOrientation" class="row">
+    <div class="col-md-6" style="padding-left: 0;">
+      <div [attr.class]="dropdownClass" style="margin-top: 5px;">
+        <span
+          (click)="setDropdownClass()"
+          [attr.aria-expanded]="ariaExpandedAttribute"
+          [attr.data-cy]="'pages-dropdown'"
+          class="dropdown-toggle"
+          id="pages-dropdown"
+          style="font-size: 12px;"
+          >{{ activePage }}</span
+        >
+        <div
+          [attr.class]="dropdownMenuClass"
+          style="
+            position: absolute;
+            transform: translate3d(0px, 24px, 0px);
+            top: 0;
+            left: 0;
+            will-change: transform;
+          "
+          x-placement="bottom-start"
+        >
+          <ng-container *ngFor="let menuOption of menuOptions; let i = index">
+            <a
+              (click)="setActivePage(menuOption, i)"
+              [attr.data-cy]="'toolbar-dropdown-item-' + i"
+              class="dropdown-item toolbar-dropdown-item toolbar-dropdown-item-{{ i }}"
+              href="#"
+              >{{ menuOption }}</a
+            >
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-6 text-right"
+      style="display: flex; justify-content: flex-end; padding-right: 0;"
+    >
+      <div class="custom-popover">
+        <button
+          (click)="openSaveWebsiteModal()"
+          [attr.data-cy]="'toolbar-save-button'"
+          class="toolbar-save btn toolbar-save-button"
+          ngbPopover="Save"
+          placement="left"
+          triggers="mouseenter:mouseleave"
+          type="button"
+        >
+          <svg
+            class="toolbar-save btn-icon"
+            height="24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="toolbar-save"
+              d="M2.4,1C1.6,1,1,1.6,1,2.4v19.2C1,22.4,1.6,23,2.4,23h19.2c0.8,0,1.4-0.6,1.4-1.4V5.8c0-0.1,0-0.3-0.1-0.3 l-4.3-4.3C18.5,1,18.4,1,18.2,1H2.4z M5.8,1.9h11c0.5,0,1,0.4,1,1v5.3c0,0.5-0.4,1-1,1h-11c-0.5,0-1-0.4-1-1V2.9 C4.8,2.4,5.2,1.9,5.8,1.9z M14.4,2.9c-0.3,0-0.5,0.2-0.5,0.5v4.3c0,0.3,0.2,0.5,0.5,0.5h1.4c0.3,0,0.5-0.2,0.5-0.5V3.4 c0-0.3-0.2-0.5-0.5-0.5H14.4z M6.2,12.5h11.7c0.7,0,1.3,0.6,1.3,1.3v8.3H4.8v-8.3C4.8,13.1,5.4,12.5,6.2,12.5z M2.9,19.7h1v1h-1 V19.7z M20.2,19.7h1v1h-1V19.7z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            ></path>
+            <rect
+              fill="currentColor"
+              fill-rule="evenodd"
+              height="1"
+              width="1"
+              x="2.9"
+              y="19.7"
+            ></rect>
+            <rect
+              fill="currentColor"
+              fill-rule="evenodd"
+              height="1"
+              width="1"
+              x="20.2"
+              y="19.7"
+            ></rect>
+            <rect
+              fill="currentColor"
+              fill-rule="evenodd"
+              height="1"
+              width="1"
+              x="24.9"
+              y="12.5"
+            ></rect>
+          </svg>
+        </button>
+      </div>
+      <div class="custom-popover">
+        <button
+          (click)="toggleFullScreen()"
+          [attr.data-cy]="'toolbar-full-screen-button'"
+          class="toolbar-full-screen btn toolbar-full-screen-button"
+          ngbPopover="Full screen"
+          placement="left"
+          triggers="mouseenter:mouseleave"
+          type="button"
+        >
+          <svg [ngClass]="fullScreenButtonIcon" class="toolbar-full-screen" height="24" width="24">
+            <path
+              class="toolbar-full-screen"
+              clip-rule="evenodd"
+              d="M14.636 10.43L18.5 6.565v2.687a.75.75 0 0 0 1.5 0V5.497c0-.966-.53-1.495-1.497-1.495h-3.749a.75.75 0 0 0 0 1.5h2.687l-3.867 3.867a.75.75 0 0 0 1.06 1.061zm-5.27 3.139l-3.867 3.867v-2.688a.75.75 0 0 0-1.5 0v3.75c0 .967.527 1.5 1.493 1.5h3.753a.75.75 0 0 0 0-1.5H6.558l3.869-3.869a.75.75 0 0 0-1.061-1.06z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="custom-popover">
+        <button
+          (click)="togglePreview()"
+          [attr.data-cy]="'toolbar-preview-button'"
+          class="toolbar-preview btn toolbar-preview-button"
+          ngbPopover="Preview"
+          placement="left"
+          triggers="mouseenter:mouseleave"
+          type="button"
+        >
+          <svg [ngClass]="previewButtonIcon" class="toolbar-preview" height="24" width="24">
+            <path
+              class="toolbar-preview"
+              d="M12.015 7c4.751 0 8.063 3.012 9.504 4.636-1.401 1.837-4.713 5.364-9.504 5.364-4.42 0-7.93-3.536-9.478-5.407 1.493-1.647 4.817-4.593 9.478-4.593zm0-2c-7.569 0-12.015 6.551-12.015 6.551s4.835 7.449 12.015 7.449c7.733 0 11.985-7.449 11.985-7.449s-4.291-6.551-11.985-6.551zm-.015 3c-2.21 0-4 1.791-4 4s1.79 4 4 4c2.209 0 4-1.791 4-4s-1.791-4-4-4zm-.004 3.999c-.564.564-1.479.564-2.044 0s-.565-1.48 0-2.044c.564-.564 1.479-.564 2.044 0s.565 1.479 0 2.044z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div *ngIf="!previewMode" class="custom-popover">
+        <button
+          (click)="openNewPageModal()"
+          [attr.data-cy]="'toolbar-page-add-button'"
+          class="toolbar-page-add btn toolbar-page-add-button"
+          ngbPopover="Create new page"
+          placement="left"
+          triggers="mouseenter:mouseleave"
+          type="button"
+        >
+          <svg
+            class="toolbar-page-add btn-icon"
+            fill="none"
+            height="20"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="toolbar-page-add"
+              clip-rule="evenodd"
+              d="M9.375 9.375V4.167a.625.625 0 1 1 1.25 0v5.208h5.208a.625.625 0 1 1 0 1.25h-5.208v5.208a.625.625 0 0 1-1.25 0v-5.208H4.167a.625.625 0 0 1 0-1.25h5.208z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="custom-popover">
+        <button
+          (click)="openDeletePageModal()"
+          [attr.data-cy]="'toolbar-page-delete-button'"
+          class="toolbar-page-delete btn toolbar-page-delete-button"
+          ngbPopover="Delete page"
+          placement="left"
+          triggers="mouseenter:mouseleave"
+          type="button"
+        >
+          <svg
+            class="toolbar-page-delete btn-icon"
+            fill="none"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="toolbar-page-delete"
+              clip-rule="evenodd"
+              d="M9 3.25h2c.69 0 1.25.56 1.25 1.25V5h-4.5v-.5c0-.69.56-1.25 1.25-1.25zM6.5 5v-.5A2.5 2.5 0 0 1 9 2h2a2.5 2.5 0 0 1 2.5 2.5V5h3.375a.625.625 0 1 1 0 1.25H16V15a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V6.25h-.875a.625.625 0 1 1 0-1.25H6.5zm7 1.25H5.25V15c0 .966.784 1.75 1.75 1.75h6A1.75 1.75 0 0 0 14.75 15V6.25H13.5zM8.125 8h-.25v6h1.25V8h-1zm2.75 1V8h1.25v6h-1.25V9z"
+              fill="currentColor"
+              fill-rule="evenodd"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.builder-sidebar-outer-container {
+  padding-left: 0;
+  margin-left: 0;
+  padding-top: 56px;
+}
+
+.builder-sidebar-inner-container {
+  height: 100%;
+  width: 100%;
+}

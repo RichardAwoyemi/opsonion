@@ -1,0 +1,51 @@
+<div id="templates"></div>
+<div style="padding: 2em;">
+  <header
+    class="header text-white"
+    style="
+      border-radius: 5px;
+      background-image: url('../../../../../assets/img/templates-search.jpg');
+    "
+  >
+    <div class="overlay opacity-80" style="background-color: #4875ee;"></div>
+    <div class="container">
+      <div class="row align-items-center h-100">
+        <div class="col-md-8 mx-auto text-center">
+          <h1>Pick your starting point</h1>
+        </div>
+        <div class="col-md-8 mx-auto text-center" style="margin-top: 1em;">
+          <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="ti-search"></i></span>
+            </div>
+            <label for="template-search"></label>
+            <input
+              (keyup)="trim()"
+              [(ngModel)]="searchText"
+              class="form-control"
+              id="template-search"
+              placeholder="Search for a template"
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="col-md-8 mx-auto text-center" style="margin-top: 1em;">
+          Choose from our free ready-to-use templates to use on your next website
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="row" style="padding-top: 2em;">
+    <div *ngFor="let template of webTemplates | filter: searchText | sort: 'name'" class="col-md-4">
+      <app-browser-mockup
+        [img]="S3_COMPONENT_TEMPLATES_BUCKET_URL + '/' + template['id'] + '-template-preview.jpg'"
+        [template]="asType(template)"
+        [user]="user"
+        [view]="'template'"
+      ></app-browser-mockup>
+      <div class="text-center" style="padding-top: 1em;">
+        {{ template['name'] }}
+      </div>
+    </div>
+  </div>
+</div>
